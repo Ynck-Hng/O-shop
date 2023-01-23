@@ -4,6 +4,6 @@ const itemController = require("./../../controllers/itemController");
 
 // Currently on route /item
 
-router.get("/", itemController.itemPage);
+router.get("/:figurineId", itemController.itemPage);
 
 module.exports = router;

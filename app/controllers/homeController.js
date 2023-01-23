@@ -1,4 +1,3 @@
-const { Sequelize } = require("sequelize");
 const sequelize = require("../models/database/sequelize");
 const {errorCatcher} = require("./../middlewares/errorHandler/errorHandler");
 const {Figurine, Review} = require("./../models");

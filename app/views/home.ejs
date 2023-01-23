@@ -19,7 +19,7 @@
             <article class="product__infos">
                 <div class="image__tag--container">
                     <div class="product__image--container">
-                        <a href="">    
+                        <a href="/item/<%=figurine.figurine.id%>">    
                             <img class="product__image" src="/images/<%=figurine.figurine.name.toLowerCase()%>.png" alt="<%=figurine.figurine.name%>">
                         </a>
                     </div>
@@ -29,7 +29,7 @@
                 </div>
                 
                 <a class="product_name--link" href="">
-                    <div class="product__name"> <a href="/item"> <%=figurine.figurine.name%> </a> </div>
+                    <div class="product__name"> <a href="/item/<%=figurine.figurine.id%>"> <%=figurine.figurine.name%> </a> </div>
                 </a>
                 <div class="company"> Vendeur : O'Shop & Co </div>
                 <div class="price"> <%=figurine.figurine.price%>€ </div>
