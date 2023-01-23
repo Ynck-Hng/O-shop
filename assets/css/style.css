@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -168,7 +169,7 @@ body {
   margin: 1em 0;
 }
 
-.badge__gentil--container, .badge__animal--container, .badge__mechant--container {
+.badge__gentil--container, .badge__animal--container, .badge__méchant--container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -180,20 +181,20 @@ body {
   color: black;
   margin-top: 0.3em;
 }
-.badge__gentil--container .category__title, .badge__animal--container .category__title, .badge__mechant--container .category__title {
+.badge__gentil--container .category__title, .badge__animal--container .category__title, .badge__méchant--container .category__title {
   margin-left: 1.5em;
   font-size: 1.5rem;
 }
-.badge__gentil--container .quantity, .badge__animal--container .quantity, .badge__mechant--container .quantity {
+.badge__gentil--container .quantity, .badge__animal--container .quantity, .badge__méchant--container .quantity {
   margin-right: 1.7em;
   font-size: 1.2rem;
 }
 
-.badge__gentil--container:active, .badge__animal--container:active, .badge__mechant--container:active {
+.badge__gentil--container:active, .badge__animal--container:active, .badge__méchant--container:active {
   background-image: linear-gradient(white, white);
 }
 
-.badge__mechant--container {
+.badge__méchant--container {
   background-image: linear-gradient(white, rgb(177, 42, 42));
 }
 
@@ -249,14 +250,22 @@ body {
   transition: all 0.5s;
 }
 
-.tag__gentil {
+.tag__gentil, .tag__animal, .tag__méchant {
   position: absolute;
-  left: 2.5rem;
-  top: 3rem;
+  left: 2.5em;
+  bottom: 2em;
   background-color: pink;
   padding: 0.7em;
   color: white;
   border-radius: 50%;
+}
+
+.tag__méchant {
+  background-color: red;
+}
+
+.tag__animal {
+  background-color: lightblue;
 }
 
 .product__name, .rating, .price, .company {

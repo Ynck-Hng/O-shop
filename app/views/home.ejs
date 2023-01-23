@@ -6,109 +6,38 @@
 
     <div class="category__list">
         <h2 class="category__label"> Catégories : </h2>
-        <div class="badge__gentil--container">
-            <p class="gentil__title category__title"> Gentil </p>
-            <span class="quantity"> 5 </span>
-        </div>
-
-        <div class="badge__mechant--container">
-            <p class="mechant__title category__title"> Méchant </p>
-            <span class="quantity"> 2 </span>
-        </div>
-
-        <div class="badge__animal--container">
-            <p class="animal__title category__title"> Animal </p>
-            <span class="quantity"> 1</span>
-        </div>
+        <%for(let category of categories){%>
+            <div class="badge__<%=category.name.toLowerCase()%>--container">
+                <p class="<%=category.name.toLowerCase()%>__title category__title"> <%=category.name%> </p>
+                <span class="quantity"> <%=category.count%> </span>
+            </div>
+        <%}%>
     </div>
 
     <div class="articles__container">
-        <article class="product__infos">
-            <div class="image__tag--container">
-                <div class="product__image--container">
-                    <a href="">    
-                        <img class="product__image" src="/images/aerith.png" alt="Aerith">
-                    </a>
+        <%for(let figurine of figurines){%>
+            <article class="product__infos">
+                <div class="image__tag--container">
+                    <div class="product__image--container">
+                        <a href="">    
+                            <img class="product__image" src="/images/<%=figurine.figurine.name.toLowerCase()%>.png" alt="<%=figurine.figurine.name%>">
+                        </a>
+                    </div>
+                    <div class="tag__<%=figurine.figurine.category.toLowerCase()%>">
+                        <%=figurine.figurine.category%>
+                    </div>
                 </div>
-            <div class="tag__gentil">
-                Gentil
-            </div>
-            </div>
-            
-            <a class="product_name--link" href="">
-                <div class="product__name"> <a href="/item"> Aerith </a> </div>
-            </a>
-            <div class="company"> Vendeur : O'Shop & Co </div>
-            <div class="price"> 2500€ </div>
-            <div class="rating"> Avis : 2 / 5 &#9733;</div>
-            <a class="addCart__link" href="#"><button class="addCart"> Ajouter au panier </button></a>
-        </article>
-
-        <article class="product__infos">
-            <div class="image__tag--container">
-                <img class="product__image" src="/images/aerith.png" alt="Aerith">
-            <div class="tag__gentil">
-                Gentil
-            </div>
-            </div>
-            
-
-            <div class="product__name"> Aerith </div>
-            <div class="company"> Vendeur : O'Shop & Co </div>
-            <div class="price"> Prix 2500€ </div>
-            <div class="rating"> Avis : 2 / 5 </div>
-            <a class="addCart__link" href="#"><button class="addCart"> Ajouter au panier </button></a>
-        </article>
-
-        <article class="product__infos">
-            <div class="image__tag--container">
-                <img class="product__image" src="/images/aerith.png" alt="Aerith">
-            <div class="tag__gentil">
-                Gentil
-            </div>
-            </div>
-            
-
-            <div class="product__name"> Aerith </div>
-            <div class="company"> Vendeur : O'Shop & Co </div>
-            <div class="price"> Prix 2500€ </div>
-            <div class="rating"> Note utilisateur : 2 / 5 </div>
-            <a class="addCart__link" href="#"><button class="addCart"> Ajouter au panier </button></a>
-        </article>
-
-        <article class="product__infos">
-            <div class="image__tag--container">
-                <img class="product__image" src="/images/aerith.png" alt="Aerith">
-            <div class="tag__gentil">
-                Gentil
-            </div>
-            </div>
-            
-
-            <div class="product__name"> Aerith </div>
-            <div class="company"> Vendeur : O'Shop & Co </div>
-            <div class="price"> Prix 2500€ </div>
-            <div class="rating"> Note utilisateur : 2 / 5 </div>
-            <a class="addCart__link" href="#"><button class="addCart"> Ajouter au panier </button></a>
-        </article>
-
-        <article class="product__infos">
-            <div class="image__tag--container">
-                <a href="">    
-                    <img class="product__image" src="/images/aerith.png" alt="Aerith">
+                
+                <a class="product_name--link" href="">
+                    <div class="product__name"> <a href="/item"> <%=figurine.figurine.name%> </a> </div>
                 </a>
-            <div class="tag__gentil">
-                Gentil
-            </div>
-            </div>
+                <div class="company"> Vendeur : O'Shop & Co </div>
+                <div class="price"> <%=figurine.figurine.price%>€ </div>
+                <div class="rating"> Avis : <%=Math.round(figurine.note*10) / 10%> / 5 </div>
+                <a class="addCart__link" href="#"><button class="addCart"> Ajouter au panier </button></a>
+            </article>
+        <%}%>
             
-
-            <div class="product__name"> Nom azsqfrqrzesfqzesfd: Aerith </div>
-            <div class="company"> Vendeur : O'Shop & Co </div>
-            <div class="price"> Prix 2500€ </div>
-            <div class="rating"> Note utilisateur : 2 / 5 </div>
-            <a class="addCart__link" href="#"><button class="addCart"> Ajouter au panier </button></a>
-        </article>
     </div>
 
     

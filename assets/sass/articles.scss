@@ -49,12 +49,22 @@
 
 .tag__gentil{
     position:absolute;
-    left: 2.5rem;
-    top: 3rem;
+    left: 2.5em;
+    bottom: 2em;
     background-color: pink;
     padding: 0.7em;
     color: white;
     border-radius: 50%;
+}
+
+.tag__méchant{
+    @extend .tag__gentil;
+    background-color: red;
+}
+
+.tag__animal{
+    @extend .tag__gentil;
+    background-color: lightblue;
 }
 
 .product__name{
