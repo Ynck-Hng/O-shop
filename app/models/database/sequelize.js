@@ -4,6 +4,6 @@ const sequelize = new Sequelize(process.env.PG_URL,{
         underscored:true,
         timestamps: false,
     }
-})
+});
 
 module.exports = sequelize;

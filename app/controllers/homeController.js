@@ -1,8 +1,13 @@
+const {errorCatcher} = require("./../middlewares/errorHandler/errorHandler");
+const {Figurine} = require("./../models");
+
 const homeController = {
 
-    homePage: (req,res) => {
+    homePage: async (req,res) => {
         res.render("home");
-    }
+    },
+
+    
 
 }
 

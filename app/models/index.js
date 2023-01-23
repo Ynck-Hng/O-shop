@@ -13,4 +13,4 @@ Review.belongsTo(Figurine,{
     foreignKey: "figurine_id"
 })
 
-module.exports = {Figurine, Review};
+module.exports = { Figurine, Review }

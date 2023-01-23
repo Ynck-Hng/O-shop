@@ -25,6 +25,8 @@ Review.init({
         allowNull: false,
     }
 },{
-    tableName:"review",
+    tableName: "review",
     sequelize
 })
+
+module.exports = Review;
