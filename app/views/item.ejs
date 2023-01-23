@@ -5,23 +5,23 @@
     <div class="item__infos--container">
 
         <div class="item__image--container">
-            <img class="item__image" src="/images/aerith.png" alt="Aerith">
+            <img class="item__image" src="/images/<%=figurine.name.toLowerCase()%>.png" alt="<%=figurine.name%>">
         </div>
 
         <div class="item__description--container">
 
             <h2 class="item__name">
-                Aerith
+                <%=figurine.name%>
             </h2>
 
-            <p class="item__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, cum.</p>
+            <p class="item__text"> <%=figurine.description%></p>
             
             <div class="item__rating">
-                Moyenne : start star star 
+                Moyenne : <%=Math.round(rating*10) / 10%> / 5
             </div>
 
             <div class="item__price">
-                2500€
+                <%=figurine.price%>€
             </div>
 
             <div class="item__buttons--container">
@@ -34,23 +34,13 @@
 
     <div class="reviews__container">
         <h2 class="reviews__label"> Avis des utilisateurs </h2>
-        <div class="reviews">
-            <p class="review__author"> Auteur </p>
-            <p class="review__rating"> Note : star star </p>
-            <p class="review__description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae aliquam atque praesentium commodi qui beatae? </p>
-        </div>
-
-        <div class="reviews">
-            <p class="review__author"> Auteur </p>
-            <p class="review__rating"> Note : star star </p>
-            <p class="review__description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae aliquam atque praesentium commodi qui beatae? </p>
-        </div>
-
-        <div class="reviews">
-            <p class="review__author"> Auteur </p>
-            <p class="review__rating"> Note : star star </p>
-            <p class="review__description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae aliquam atque praesentium commodi qui beatae? </p>
-        </div>
+        <%for(let review of reviews){%>
+            <div class="reviews">
+                <p class="review__author"> <%=review.author%> - Note : <%=review.note%> / 5 </p>
+                <p class="review__title"> Avis : <%=review.title%> </p>
+                <p class="review__description"> <%=review.message%> </p>
+            </div>
+        <%}%>
 
     </div>
 </main>

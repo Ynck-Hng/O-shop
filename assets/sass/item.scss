@@ -53,6 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 1em;
 }
 
 .button__add{
@@ -95,13 +96,13 @@
 
     .review__author{
         font-size: 1.5rem;
-        font-weight: bold;
         padding-top: 1em;
     }
 
-    .review__rating{
-        font-size: 1.4rem;
-        padding: 1em 0;
+    .review__title{
+        font-size: 1.6rem;
+        padding: 1em 0 2em 0;
+        font-weight: bold;
     }
 
     .review__description{
