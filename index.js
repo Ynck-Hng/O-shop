@@ -12,6 +12,7 @@ const {errorCollector, notFound} = require("./app/middlewares/errorHandler/error
 app.set("view engine", "ejs");
 app.set("views", "./app/views");
 
+app.use(express.urlencoded({extended: true}));
 app.use(express.static("assets"));
 
 app.use(
@@ -29,7 +30,6 @@ app.use(
 app.use(userSession);
 
 app.use(cart);
-
 
 app.use(router);
 

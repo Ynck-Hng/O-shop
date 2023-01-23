@@ -348,6 +348,7 @@ body {
   font-size: 4rem;
   margin-top: 1em;
   margin-bottom: 1em;
+  text-decoration: underline;
 }
 
 .item__text {
