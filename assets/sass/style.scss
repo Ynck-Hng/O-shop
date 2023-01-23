@@ -8,24 +8,47 @@
 }
 
 a{
-    color: white;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+button{
+    cursor: pointer;
 }
 
 body{
-    background-color: rgb(43, 43, 43);
+    background-image: linear-gradient(lightblue, lightpink);
     min-height: 100vh;
+    font-family: sans-serif;
 }
 
 .container{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    min-width: 100%;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Header */
 
 @import 'header.scss';
 
+/* Main */
 @import 'main.scss';
+
+/* Category */
 
 @import 'category.scss';
 
-@import 'article.scss';
+/* articles */
+@import 'articles.scss';
+
+/* item */
+
+@import 'item.scss';
+
+/* cart */
+@import 'cart.scss';

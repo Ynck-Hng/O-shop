@@ -14,8 +14,15 @@
     width: 20rem;
     background-color: white;
     border-radius: 2rem;
-    margin-right: 2rem;
-    margin-top: 2rem;
+    margin: 2em 1em 0 1em;
+    border: solid 2px lightgray;
+    background-image: linear-gradient(whitesmoke, white);
+   
+}
+
+.product__infos:hover{
+    box-shadow: 10px 7px 10px white;
+    transition: all 0.5s;
 }
 
 .image__tag--container{
@@ -25,24 +32,35 @@
 .product__image{
     width: 100%;
     height: auto;
-    border-bottom: solid 1px black;
-    border-radius: 8rem;
+    border-bottom: solid 2px lightgray;
+    border-radius: 8em;
 
+}
+
+.product__image--container{
+    overflow: hidden;
+}
+
+.product__image:hover{
+    transform: scale(1.1);
+    border-bottom: solid 2px white;
+    transition: all 0.5s;
 }
 
 .tag__gentil{
     position:absolute;
-    left: 1.5rem;
-    top: 1.5rem;
-    background-color: greenyellow;
-    padding: 0.7rem;
+    left: 2.5rem;
+    top: 3rem;
+    background-color: pink;
+    padding: 0.7em;
     color: white;
     border-radius: 50%;
 }
 
 .product__name{
     font-size: 2rem;
-    padding-bottom: 1rem;
+    padding: 0.3em 0;
+    color: black;
 }
 
 .company{
@@ -54,6 +72,7 @@
     @extend .product__name;
     font-weight: bold;
     font-size: 1.5rem;
+    color: rgb(68, 68, 68);
 }
 
 .rating{
@@ -67,9 +86,22 @@
     width: 100%;
     text-align: center;
     border-top: solid 1px black;
-    padding: 2rem 0;
+    padding: 2em 0;
     .addCart{
-        background-color: white;
+        background-color: transparent;
+        border: none;
+        font-size: 1.3rem;
+    }
+}
+
+.addCart__link:active{
+    background-color: black;
+    border-top: solid 1px white;
+    border-bottom-left-radius: 1.8em;
+    border-bottom-right-radius: 1.8em;
+    .addCart{
+        background-color: black;
+        color: white;
         border: none;
     }
 }

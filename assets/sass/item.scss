@@ -1,0 +1,24 @@
+.item__content{
+    width: 80%;
+}
+
+.item__infos--container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    margin-top: 3.5em;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.item__description--container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.item__name{
+    text-align: center;
+    font-size: 4rem;
+}

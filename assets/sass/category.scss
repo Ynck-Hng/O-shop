@@ -2,24 +2,53 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 15rem;
+    min-width: 14.25em;
     min-height: 100vh;
-    background-color: rgb(88, 88, 88);
+    background-color: white;
+    border-right: solid 1px whitesmoke;
+    border-left: solid 1px whitesmoke;
+    padding: 0 0.3em;
+    background-image: linear-gradient(lightblue, lightpink);
+}
+
+.category__label{
+    font-size: 2rem;
+    color: white;
+    border-bottom: solid 1px white;
+    margin: 1em 0;
 }
 
 .badge__gentil--container{
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 1rem;
-    padding: 1.2rem 0;
+    justify-content: space-between;
+    padding: 1.2em 0;
+    margin: 0.2em 0;
+    border: solid 1px black;
+    width: 100%;
+    background-image: linear-gradient(white, pink);
+    color: black;
+    margin-top: 0.3em;
+    .category__title{
+        margin-left: 1.5em;
+        font-size: 1.5rem;
+    }
 
+    .quantity{
+        margin-right: 1.7em;
+        font-size: 1.2rem;
+    }
 }
 
 .badge__mechant--container{
     @extend .badge__gentil--container;
+    background-color: red;
+
+
 }
 
 .badge__animal--container{
     @extend .badge__gentil--container;
+    background-color: rgb(60, 122, 255);
+
 }
