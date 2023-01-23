@@ -4,9 +4,28 @@
 
 *{
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+a{
+    color: white;
 }
 
 body{
-    background-color: gray;
+    background-color: rgb(43, 43, 43);
+    min-height: 100vh;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@import 'header.scss';
+
+@import 'main.scss';
+
+@import 'category.scss';
+
+@import 'article.scss';
