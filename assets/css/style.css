@@ -71,7 +71,7 @@ button {
 body {
   background-image: linear-gradient(lightblue, lightpink);
   min-height: 100vh;
-  font-family: sans-serif;
+  font-family: "Asap", sans-serif;
 }
 
 .container {
@@ -80,7 +80,6 @@ body {
   min-height: 100vh;
   min-width: 100%;
   align-items: center;
-  justify-content: center;
 }
 
 /* Header */
@@ -175,7 +174,7 @@ body {
   justify-content: space-between;
   padding: 1.2em 0;
   margin: 0.2em 0;
-  border: solid 1px black;
+  border: solid 1px gray;
   width: 100%;
   background-image: linear-gradient(white, pink);
   color: black;
@@ -190,12 +189,16 @@ body {
   font-size: 1.2rem;
 }
 
+.badge__gentil--container:active, .badge__animal--container:active, .badge__mechant--container:active {
+  background-image: linear-gradient(white, white);
+}
+
 .badge__mechant--container {
-  background-color: red;
+  background-image: linear-gradient(white, rgb(177, 42, 42));
 }
 
 .badge__animal--container {
-  background-color: rgb(60, 122, 255);
+  background-image: linear-gradient(white, lightblue);
 }
 
 /* articles */
@@ -312,20 +315,100 @@ body {
   justify-content: space-around;
   align-items: center;
   background-color: white;
+  background-image: linear-gradient(0.75turn, rgb(206, 241, 253), rgb(245, 250, 252), white);
+  border-radius: 15px;
   margin-top: 3.5em;
-  min-height: 80vh;
+  width: 100%;
+}
+
+.item__image {
+  border-radius: 15px;
   width: 100%;
 }
 
 .item__description--container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: 50%;
+  min-height: 80vh;
 }
 
 .item__name {
   text-align: center;
   font-size: 4rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.item__text {
+  text-align: justify;
+  font-size: 2rem;
+}
+
+.item__rating {
+  margin-top: 2em;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.item__price {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1em 0;
+}
+
+.item__buttons--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button__add, .button__purchase {
+  font-size: 2rem;
+  background-color: rgb(139, 69, 19);
+  color: white;
+  border: none;
+  padding: 1em;
+}
+
+.button__purchase {
+  background-color: black;
+}
+
+.reviews__container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 1em;
+  border-radius: 15px;
+}
+
+.reviews__label {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1em 0;
+  border-bottom: solid 1px lightgray;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px lightgray;
+  padding-bottom: 1em;
+}
+.reviews .review__author {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 1em;
+}
+.reviews .review__rating {
+  font-size: 1.4rem;
+  padding: 1em 0;
+}
+.reviews .review__description {
+  font-size: 1.2rem;
 }
 
 /* cart */
@@ -426,6 +509,105 @@ body {
 
 .checkout__button:active {
   background-color: black;
+}
+
+/* login */
+.form__container {
+  min-height: 80vh;
+  width: 60%;
+  margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 10px;
+}
+
+.login__title {
+  font-size: 3rem;
+}
+
+input {
+  font-size: 2rem;
+  border-radius: 5px;
+}
+
+.email__container--login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6em;
+}
+
+.password__container--login {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__submit--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.login__submit {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 1em;
+}
+
+.accountless__container {
+  margin-top: 4em;
+}
+
+.account__signin--link {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* signin */
+.signin__form--container {
+  min-height: 80vh;
+  width: 60%;
+  margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 10px;
+}
+
+.signin__title {
+  font-size: 3rem;
+  margin-bottom: 1em;
+}
+
+.firstname__container, .password__confirm--container, .password__container--submit, .email__container--submit, .lastname__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.account__owner--container {
+  margin-top: 2em;
+}
+
+.account__login--link {
+  color: blue;
+  text-decoration: underline;
+}
+
+/*mediaqueries*/
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 5px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

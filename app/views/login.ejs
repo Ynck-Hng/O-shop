@@ -1,0 +1,33 @@
+<%-include("./partials/header")%>
+
+<div class="form__container">
+
+    <h2 class="login__title"> Connexion </h2>
+
+    <form method="POST" action="/login">
+        <div class="email__container--login">  
+            <label for="email__login"> Email </label>
+            <input type="email" name="email__login" placeholder="johndoe@example.com">
+        </div>
+
+        
+        <div class="password__container--login">
+            <label for="password__login"> Mot de passe</label>
+            <input type="password" name="password__login">
+        </div>
+
+        <div class="login__submit--container">
+            <button type="submit" class="login__submit"> Se connecter </button>
+        </div>
+
+    </form>
+
+    <div class="accountless__container">
+
+        <span class="accountless__description"> Vous n'avez pas de compte ? <a href="/signin" class="account__signin--link"> Inscrivez-vous ! </a></span>
+
+    </div>
+</div>
+
+
+<%-include("./partials/footer")%>

@@ -1,0 +1,35 @@
+<%-include("./partials/header")%>
+
+<div class="signin__form--container">
+    
+    <h2 class="signin__title"> Inscription </h2>
+
+    <form action="/signin" method="POST">
+        <div class="firstname__container">
+            <label for="firstname__submit"> Prénom </label>
+            <input type="text" name="firstname__submit">
+        </div>
+        <div class="lastname__container">
+            <label for="lastname__submit"> Nom de famille </label>
+            <input type="text" name="lastname__submit">
+        </div>
+        <div class="email__container--submit">
+            <label for="email__submit"> Email </label>
+            <input type="email" name="email__submit" placeholder="johndoe@example.com">
+        </div>
+        <div class="password__container--submit">
+            <label for="password__submit"> Mot de passe </label>
+            <input type="password" name="password__submit">
+        </div>
+        <div class="password__confirm--container">
+            <label for="password__confirm--submit"> Confirmation du mot de passe </label>
+            <input type="password" name="password__confirm--submit">
+        </div>
+    </form>
+
+    <div class="account__owner--container">
+        <span class="account__owner--description"> Vous possédez déjà un compte ? <a href="/login" class="account__login--link"> Connectez-vous ! </a></span>
+    </div>
+</div>
+
+<%-include("./partials/footer")%>

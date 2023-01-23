@@ -20,7 +20,7 @@ button{
 body{
     background-image: linear-gradient(lightblue, lightpink);
     min-height: 100vh;
-    font-family: sans-serif;
+    font-family:'Asap', sans-serif;
 }
 
 .container{
@@ -29,7 +29,6 @@ body{
     min-height: 100vh;
     min-width: 100%;
     align-items: center;
-    justify-content: center;
 }
 
 /* Header */
@@ -52,3 +51,12 @@ body{
 
 /* cart */
 @import 'cart.scss';
+
+/* login */
+@import 'login.scss';
+
+/* signin */ 
+@import 'signin.scss';
+
+/*mediaqueries*/
+@import 'mediaqueries.scss';

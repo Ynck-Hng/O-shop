@@ -24,7 +24,7 @@
     justify-content: space-between;
     padding: 1.2em 0;
     margin: 0.2em 0;
-    border: solid 1px black;
+    border: solid 1px gray;
     width: 100%;
     background-image: linear-gradient(white, pink);
     color: black;
@@ -40,15 +40,17 @@
     }
 }
 
+.badge__gentil--container:active{
+    background-image: linear-gradient(white,white);
+}
+
 .badge__mechant--container{
     @extend .badge__gentil--container;
-    background-color: red;
-
+    background-image: linear-gradient(white, rgb(177, 42, 42));
 
 }
 
 .badge__animal--container{
     @extend .badge__gentil--container;
-    background-color: rgb(60, 122, 255);
-
+    background-image: linear-gradient(white, lightblue);
 }
