@@ -22,14 +22,15 @@
                 <div class="header__nav--subtitle">
                     La boutique de figurines
                 </div>
-
                 <div class="header__nav--links">
                     <a class="cart__link link" href="/cart"> Panier </a>
                     <%if(locals.session.user === undefined){%>
                         <a class="login__link link" href="/login"> Se connecter</a>
                         <a class="signin__link link" href="/signin"> S'inscrire </a>
                     <%} else {%>
-                        <a class="admin__link link" href="#"> Admin </a>
+                        <%if(locals.session.user.roles === "admin"){%>
+                            <a class="admin__link link" href="#"> Admin </a>
+                        <%}%>
                         <span class="username"> <%=locals.session.user.firstname%> <%=locals.session.user.lastname%></span>
                         <a class="logout__link link" href="/logout"> Se déconnecter </a>
                     <%}%>
