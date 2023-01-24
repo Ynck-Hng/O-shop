@@ -146,6 +146,7 @@ body {
 /* Main */
 .main__container {
   display: flex;
+  width: 100%;
 }
 
 /* Category */
@@ -169,7 +170,7 @@ body {
   margin: 1em 0;
 }
 
-.badge__gentil--container, .badge__animal--container, .badge__méchant--container {
+.badge__gentil--link-container, .badge__animal--link-container, .badge__méchant--link-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -181,24 +182,24 @@ body {
   color: black;
   margin-top: 0.3em;
 }
-.badge__gentil--container .category__title, .badge__animal--container .category__title, .badge__méchant--container .category__title {
+.badge__gentil--link-container .category__title, .badge__animal--link-container .category__title, .badge__méchant--link-container .category__title {
   margin-left: 1.5em;
   font-size: 1.5rem;
 }
-.badge__gentil--container .quantity, .badge__animal--container .quantity, .badge__méchant--container .quantity {
+.badge__gentil--link-container .quantity, .badge__animal--link-container .quantity, .badge__méchant--link-container .quantity {
   margin-right: 1.7em;
   font-size: 1.2rem;
 }
 
-.badge__gentil--container:active, .badge__animal--container:active, .badge__méchant--container:active {
+.badge__gentil--link-container:active, .badge__animal--link-container:active, .badge__méchant--link-container:active {
   background-image: linear-gradient(white, white);
 }
 
-.badge__méchant--container {
+.badge__méchant--link-container {
   background-image: linear-gradient(white, rgb(177, 42, 42));
 }
 
-.badge__animal--container {
+.badge__animal--link-container {
   background-image: linear-gradient(white, lightblue);
 }
 
@@ -454,6 +455,10 @@ body {
   height: auto;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+}
+
+input[type=number] {
+  text-align: center;
 }
 
 .remove__button {

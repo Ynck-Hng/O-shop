@@ -18,7 +18,7 @@
     margin: 1em 0;
 }
 
-.badge__gentil--container{
+.badge__gentil--link-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,17 +40,17 @@
     }
 }
 
-.badge__gentil--container:active{
+.badge__gentil--link-container:active{
     background-image: linear-gradient(white,white);
 }
 
-.badge__méchant--container{
-    @extend .badge__gentil--container;
+.badge__méchant--link-container{
+    @extend .badge__gentil--link-container;
     background-image: linear-gradient(white, rgb(177, 42, 42));
 
 }
 
-.badge__animal--container{
-    @extend .badge__gentil--container;
+.badge__animal--link-container{
+    @extend .badge__gentil--link-container;
     background-image: linear-gradient(white, lightblue);
 }

@@ -7,10 +7,10 @@
     <div class="category__list">
         <h2 class="category__label"> Catégories : </h2>
         <%for(let category of categories){%>
-            <div class="badge__<%=category.name.toLowerCase()%>--container">
-                <p class="<%=category.name.toLowerCase()%>__title category__title"> <%=category.name%> </p>
-                <span class="quantity"> <%=category.count%> </span>
-            </div>
+            <a href="/category/<%=category.name%>" class="badge__<%=category.name.toLowerCase()%>--link-container">
+                    <p class="<%=category.name.toLowerCase()%>__title category__title"> <%=category.name%> </p>
+                    <span class="quantity"> <%=category.count%> </span>   
+            </a>
         <%}%>
     </div>
 
