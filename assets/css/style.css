@@ -668,6 +668,24 @@ input {
   text-decoration: underline;
 }
 
+.notFound__container, .forbidden__container, .serverError__container {
+  background-image: url(./../images/404.svg);
+  width: 100%;
+  min-height: 100vh;
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.serverError__container {
+  background-image: url(./../images/500.svg);
+}
+
+.forbidden__container {
+  background-image: url(./../images/403.svg);
+}
+
 /*mediaqueries*/
 @media screen and (max-width: 1270px) {
   html {

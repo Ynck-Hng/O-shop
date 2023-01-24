@@ -4,14 +4,14 @@ exports.errorCatcher = (fn) => { return (req,res,next) => {
 
 exports.errorCollector = (err,req,res,next)=>{
     const status = err.status || 500;
-    
     if(status === 404){
         res.format({
             "text/html": res.status(status).render("./error/404", {message: err.message, stack: err.stack})
         })
     } else {
+        console.log("non");
         res.format({
-                "text/html": res.status(status).render("./error/505", {message: err.message, stack: err.stack})
+            "text/html": res.status(status).render("./error/505", {message: err.message, stack: err.stack})
             })
     }
     next();
