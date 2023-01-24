@@ -1,8 +1,8 @@
 exports.cart = (req,res,next) => {
-    res.locals.cart = req.session.cart;
+    res.locals.session = req.session;
 
-    if(res.locals.cart === undefined){
-        res.locals.cart = [];
+    if(req.session.cart === undefined){
+        req.session.cart = [];
     }
 
     next();

@@ -1,66 +1,55 @@
 <%-include("./partials/header")%>
 
 <div class="container">
-
+ 
     <h2 class="cart__title"> Total du panier </h2>
-    <div class="item__container">
-        <img class="cart__item--image" src="/images/aerith.png" alt="Aerith">
-   
 
-        <div class="cart__item--name">
-            Aerith
-        </div>
-
-        <div class="cart__item--quantity">
-            Quantité : <input type="number" name="item__quantity" max="10" min="1" value="1">
-        </div>
-
-        <div class="cart__item--price">
-            Prix : 2500€
-        </div>
-
-        <div class="cart__item--remove">
-            <button class="remove__button"> Retirer </button>
-        </div>
-    </div>
-    <div class="item__container">
-        <img class="cart__item--image" src="/images/aerith.png" alt="Aerith">
-   
-
-        <div class="cart__item--name">
-            Aerith
-        </div>
-
-        <div class="cart__item--quantity">
-            Quantité : <input type="number" name="item__quantity" max="10" min="1" value="1">
-        </div>
-
-        <div class="cart__item--price">
-            Prix : 2500€
-        </div>
-
-        <div class="cart__item--remove">
-            <button class="remove__button"> Retirer </button>
-        </div>
-        
-    </div>
-
-
-    <div class="total__price--container">
-        <div class="total__title">
-            Total :
-        </div>
-        <div class="price__infos">
-            <span class="price__ht"> HT : 1300€</span>
-            <span class="price__tax"> Taxe : 51561€ </span>
-            <span class="price__ttc"> TTC : 5131351€ </span>
-
-
-            <div class="checkout__button--container">
-                <button class="checkout__button"> Payer </button>
+    <%if(locals.session.cart.length === 0){%>
+        <span> Votre panier est tristement vide... :(</span>
+    <%}%>
+    
+    <%for(let figurine of locals.session.cart){%>
+        <div class="item__container">
+            
+            <img class="cart__item--image" src="/images/<%=figurine.name.toLowerCase()%>.png" alt="<%=figurine.name%>">
+            
+            <div class="cart__item--name">
+                <%=figurine.name%>
+            </div>
+            
+            <div class="cart__item--quantity">
+                Quantité : <input type="number" name="item__quantity" max="10" min="1" value="1">
+            </div>
+            
+            <div class="cart__item--price">
+                Prix : <%=figurine.price%> €
+            </div>
+            
+            <div class="cart__item--remove">
+                <a href="/cart/remove/<%=figurine.id%>">
+                    <button class="remove__button"> Retirer </button>
+                </a>
             </div>
         </div>
-    </div>
+    <%}%>
+
+    <%if(locals.session.cart.length !== 0){%>
+        <div class="total__price--container">
+            <div class="total__title">
+                Total :
+            </div>
+            <div class="price__infos">
+                <span class="price__ht"> HT : 1300€</span>
+                <span class="price__tax"> Taxe : 51561€ </span>
+                <span class="price__ttc"> TTC : 5131351€ </span>
+                
+                
+                <div class="checkout__button--container">
+                    <button class="checkout__button"> Payer </button>
+                </div>
+            </div>
+        </div>
+    <%}%>
 
 </div>
 
