@@ -29,7 +29,7 @@
                         <a class="login__link link" href="/login"> Se connecter</a>
                         <a class="signin__link link" href="/signin"> S'inscrire </a>
                     <%} else {%>
-                        <a class="admin__link link" href="/admin"> Admin </a>
+                        <a class="admin__link link" href="#"> Admin </a>
                         <span class="username"> <%=locals.session.user.firstname%> <%=locals.session.user.lastname%></span>
                         <a class="logout__link link" href="/logout"> Se déconnecter </a>
                     <%}%>
