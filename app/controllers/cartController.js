@@ -15,6 +15,8 @@ const cartController = {
         const totalTTC = Math.round(totalHT * (1+20/100) * 100) / 100;
         const tax = Math.round((totalTTC - totalHT) * 100) / 100; 
 
+        res.locals.meta.title = "O'Shop - Panier";
+
         res.render("cart", {totalHT, totalTTC, tax});
     },
 

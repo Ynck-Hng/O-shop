@@ -5,6 +5,7 @@ const loginController = {
 
     loginPage: (req,res)=>{
         let errorLogin = [];
+        res.locals.meta.title = "O'Shop - Connexion";
         res.render("login", {errorLogin});
     },
 

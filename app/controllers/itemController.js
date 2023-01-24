@@ -19,7 +19,7 @@ const itemController = {
                 figurine_id: figurineId,
             }
         })
-
+        res.locals.meta.title = `O'Shop - ${figurineInfo[0].figurine.name}`;
         res.render("item", {reviews, figurine: figurineInfo[0].figurine, rating: figurineInfo[0].note});
     }),
 

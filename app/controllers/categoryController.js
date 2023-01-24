@@ -34,6 +34,9 @@ const categoryController = {
                 categoriesCountTotal.push({name: `${category}`, count});
             }
         }
+        
+        res.locals.meta.title = `O'Shop - ${categoryName}`;
+
         res.render("home", {figurines: result, categories: categoriesCountTotal});
     }),
 

@@ -7,7 +7,7 @@ const session = require("express-session");
 const {cart} = require("./app/middlewares/cart/cart");
 const {userSession} = require("./app/middlewares/userSession/userSession");
 const {errorCollector, notFound} = require("./app/middlewares/errorHandler/errorHandler");
-
+const {meta} = require("./app/middlewares/meta/meta");
 
 app.set("view engine", "ejs");
 app.set("views", "./app/views");
@@ -30,6 +30,8 @@ app.use(
 app.use(userSession);
 
 app.use(cart);
+
+app.use(meta);
 
 app.use(router);
 

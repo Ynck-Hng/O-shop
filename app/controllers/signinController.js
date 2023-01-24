@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const signinController = {
     signinPage: (req,res)=>{
         let errorSignin = [];
+        res.locals.meta.title = "O'Shop - Inscription";
         res.render("signin", {errorSignin});
     },
 

@@ -223,6 +223,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: 2em;
 }
 
 .product__infos {
@@ -449,6 +450,12 @@ body {
   font-size: 3rem;
   padding: 0.5em 0;
   color: white;
+  text-align: center;
+}
+
+.cart__empty--message {
+  font-size: 2rem;
+  text-align: center;
 }
 
 .item__container {
@@ -668,6 +675,18 @@ input {
   text-decoration: underline;
 }
 
+/*footer*/
+.footer {
+  width: 100%;
+  background-image: linear-gradient(white, lightgray);
+  text-align: center;
+  font-size: 1rem;
+  padding: 1em;
+  font-weight: bold;
+  color: gray;
+}
+
+/*errors*/
 .notFound__container, .forbidden__container, .serverError__container {
   background-image: url(./../images/404.svg);
   width: 100%;

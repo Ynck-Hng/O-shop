@@ -5,7 +5,7 @@
     <h2 class="cart__title"> Total du panier </h2>
 
     <%if(locals.session.cart.length === 0){%>
-        <span> Votre panier est tristement vide... :(</span>
+        <span class="cart__empty--message"> Votre panier est tristement vide... :(</span>
     <%}%>
 
     <%for(let figurine of locals.session.cart){%>
