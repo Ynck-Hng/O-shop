@@ -28,7 +28,7 @@ input{
 .email__container--login{
     display: flex;
     flex-direction: column;
-    margin-top: 6em;
+    margin-top: 4em;
 }
 
 .password__container--login{
@@ -45,10 +45,12 @@ input{
 }
 
 .login__submit{
+    width: 80%;
+    padding: 0.5em 0;
     background-color: black;
-    color: white;
     border: none;
-    padding: 1em;
+    color: white;
+    font-size: 2rem;
 }
 
 .accountless__container{

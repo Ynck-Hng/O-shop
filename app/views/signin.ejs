@@ -4,6 +4,15 @@
     
     <h2 class="signin__title"> Inscription </h2>
 
+    <%if(locals.errorSignin.length>0){%>
+        <ul class="errorSignin__container">
+            <%for(let message of errorSignin){%>
+                <li> • <%=message.message%></li>    
+            <%}%>    
+        </ul>
+        
+    <%}%>
+
     <form action="/signin" method="POST">
         <div class="firstname__container">
             <label for="firstname__submit"> Prénom </label>
@@ -23,7 +32,11 @@
         </div>
         <div class="password__confirm--container">
             <label for="password__confirm--submit"> Confirmation du mot de passe </label>
-            <input type="password" name="password__confirm--submit">
+            <input type="password" name="passwordConfirm__submit">
+        </div>
+
+        <div class="button__submit--container">
+            <button type="submit" class="signin__button--submit"> S'inscrire </button>
         </div>
     </form>
 

@@ -13,6 +13,12 @@
 
 .signin__title{
     font-size: 3rem;
+    margin: 0.5em 0;
+}
+
+.errorSignin__container{
+    color: red;
+    line-height: 1.2em;
     margin-bottom: 1em;
 }
 
@@ -41,7 +47,22 @@
 }
 
 .account__owner--container{
-    margin-top: 2em;
+    margin: 2em 0;
+}
+
+.button__submit--container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin__button--submit{
+    width: 80%;
+    padding: 0.5em 0;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 2rem;
 }
 
 .account__login--link{

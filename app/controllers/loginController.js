@@ -14,7 +14,8 @@ const loginController = {
         const findUser = await User.findOne({
             where:{
                 email: userCredentials.email__login,
-            }
+            },
+            include: "roles"
         })
         if(!findUser){
             errorLogin.push({message: "L'email ou le mot de passe est invalide"});
@@ -25,6 +26,15 @@ const loginController = {
         if(!passwordCheck){
             errorLogin.push({message: "L'email ou le mot de passe est invalide"});
             res.status(400).render("login", {errorLogin});
+        }
+
+        console.log(findUser.toJSON());
+
+        req.session.user = {
+            firstname: findUser.firstname,
+            lastname: findUser.lastname,
+            email: findUser.email,
+            roles: findUser.roles.name,
         }
 
         res.redirect("/");

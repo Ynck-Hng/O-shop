@@ -28,16 +28,9 @@ Users.init({
     password:{
         type: Sequelize.TEXT,
         allowNull: false,
-        validate:{
-            isAlphanumeric: true
-        }
     },
     role_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        validate:{
-            isInt: true,
-        }
     }
 },{
     tableName: "users",

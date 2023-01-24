@@ -565,7 +565,7 @@ input {
 .email__container--login {
   display: flex;
   flex-direction: column;
-  margin-top: 6em;
+  margin-top: 4em;
 }
 
 .password__container--login {
@@ -582,10 +582,12 @@ input {
 }
 
 .login__submit {
+  width: 80%;
+  padding: 0.5em 0;
   background-color: black;
-  color: white;
   border: none;
-  padding: 1em;
+  color: white;
+  font-size: 2rem;
 }
 
 .accountless__container {
@@ -613,6 +615,12 @@ input {
 
 .signin__title {
   font-size: 3rem;
+  margin: 0.5em 0;
+}
+
+.errorSignin__container {
+  color: red;
+  line-height: 1.2em;
   margin-bottom: 1em;
 }
 
@@ -623,7 +631,22 @@ input {
 }
 
 .account__owner--container {
-  margin-top: 2em;
+  margin: 2em 0;
+}
+
+.button__submit--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin__button--submit {
+  width: 80%;
+  padding: 0.5em 0;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 2rem;
 }
 
 .account__login--link {
