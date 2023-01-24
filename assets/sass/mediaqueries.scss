@@ -1,5 +1,43 @@
+@media screen and (max-width: 1270px){
+
+    html{
+        font-size: 12px;
+    }
+
+    .item__infos--container{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    
+
+    .item__description--container{
+        min-height: 0vh;
+        width: 70%;
+    }
+}
+
 @media screen and (max-width: 600px) {
+    html{
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 425px) {
     html{
         font-size: 5px;
     }
+
+    .item__description--container{
+        min-height: 0vh;
+        width: 70%;
+    }
+
 }

@@ -39,7 +39,7 @@ const loginController = {
 
         res.redirect("/");
         
-    })
+    }),
 
 }
 

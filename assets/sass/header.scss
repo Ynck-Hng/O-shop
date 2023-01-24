@@ -49,10 +49,23 @@
     color: black;
 }
 
-.contact__link, .login__link{
+.logout__link, .login__link{
     border: none;
+}
+
+.admin__link{
+    border-left: none;
 }
 
 .about__link{
     border: none;
+}
+
+.username{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    border-right: solid 1px lightgray;
+    height: 100%;
+    padding: 0 1em;
 }
