@@ -3,8 +3,14 @@
 <div class="form__container">
 
     <h2 class="login__title"> Connexion </h2>
-
-    <form method="POST" action="/login">
+    <%if(locals.errorLogin.length > 0){%>
+        <ul class="errorLogin__container">
+            <%for(let message of locals.errorLogin){%>
+                <li> • <%=message.message%></li>    
+            <%}%>
+        </ul>
+    <%}%>
+    <form method="POST" action="/login/success">
         <div class="email__container--login">  
             <label for="email__login"> Email </label>
             <input type="email" name="email__login" placeholder="johndoe@example.com">

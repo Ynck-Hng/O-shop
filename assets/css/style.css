@@ -552,6 +552,11 @@ input[type=number] {
   font-size: 3rem;
 }
 
+.errorLogin__container {
+  margin-top: 3em;
+  color: red;
+}
+
 input {
   font-size: 2rem;
   border-radius: 5px;

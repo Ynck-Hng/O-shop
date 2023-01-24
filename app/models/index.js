@@ -1,5 +1,7 @@
 const Figurine = require("./Figurine");
 const Review = require("./Review");
+const User = require("./Users");
+const Roles = require("./Roles");
 
 // Figurine - Review
 
@@ -13,4 +15,16 @@ Review.belongsTo(Figurine,{
     foreignKey: "figurine_id"
 })
 
-module.exports = { Figurine, Review }
+// User - Roles
+
+Roles.hasMany(User,{
+    as:"users",
+    foreignKey: "role_id"
+})
+
+User.belongsTo(Roles, {
+    as: "roles",
+    foreignKey: "role_id"
+})
+
+module.exports = { Figurine, Review, Roles, User }
