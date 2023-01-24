@@ -1,0 +1,14 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_2" y="503" x="214" stroke-width="0" stroke="#000" fill="#000000">Oh, une 404 ! Tu peux la contempler...</text>
+  <path id="svg_8" d="m504,318" opacity="NaN" stroke-width="0" stroke="#000" fill="#000000"/>
+  <ellipse filter="url(#svg_9_blur)" ry="200" rx="200.5" id="svg_9" cy="223" cx="391" stroke-width="0" stroke="#000" fill="#FFDFB8"/>
+  <text xml:space="preserve" text-anchor="start" font-family="'Asap'" font-size="132" id="svg_11" y="271" x="280" stroke-width="0" stroke="#000" fill="#ffffff">404</text>
+ </g>
+ <defs>
+  <filter height="200%" width="200%" y="-50%" x="-50%" id="svg_9_blur">
+   <feGaussianBlur stdDeviation="2.7" in="SourceGraphic"/>
+  </filter>
+ </defs>
+</svg>
