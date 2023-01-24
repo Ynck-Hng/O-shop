@@ -14,6 +14,7 @@ const cartController = {
         totalHT = Math.round(totalHT * 100) / 100;
         const totalTTC = Math.round(totalHT * (1+20/100) * 100) / 100;
         const tax = Math.round((totalTTC - totalHT) * 100) / 100; 
+
         res.render("cart", {totalHT, totalTTC, tax});
     },
 
@@ -25,8 +26,7 @@ const cartController = {
         if(!figurineFound){
             req.session.cart.push({figurine: result, quantity: 1});
         } else if(figurineFound) {
-            let figurineQuantity = req.session.cart.find(item => item.figurine.id === figurineId);
-            figurineQuantity.quantity++;
+            figurineFound.quantity++;
         }
 
         res.redirect(req.get("referrer"));
@@ -34,7 +34,6 @@ const cartController = {
 
     removeFromCart: (req,res)=>{
         const figurineId = Number(req.params.figurineId);
-      
         req.session.cart = req.session.cart.filter(item => item.figurine.id !== figurineId);
 
         res.redirect(req.get("referrer"));
