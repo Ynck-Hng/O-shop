@@ -7,26 +7,26 @@
     <%if(locals.session.cart.length === 0){%>
         <span> Votre panier est tristement vide... :(</span>
     <%}%>
-    
+
     <%for(let figurine of locals.session.cart){%>
         <div class="item__container">
             
-            <img class="cart__item--image" src="/images/<%=figurine.name.toLowerCase()%>.png" alt="<%=figurine.name%>">
+            <img class="cart__item--image" src="/images/<%=figurine.figurine.name.toLowerCase()%>.png" alt="<%=figurine.figurine.name%>">
             
             <div class="cart__item--name">
-                <%=figurine.name%>
+                <%=figurine.figurine.name%>
             </div>
             
             <div class="cart__item--quantity">
-                Quantité : <input type="number" name="item__quantity" max="10" min="1" value="1">
+                Quantité : <input type="number" name="item__quantity" max="10" min="1" value="<%=figurine.quantity%>">
             </div>
             
             <div class="cart__item--price">
-                Prix : <%=figurine.price%> €
+                Prix : <%=figurine.figurine.price%> €
             </div>
             
             <div class="cart__item--remove">
-                <a href="/cart/remove/<%=figurine.id%>">
+                <a href="/cart/remove/<%=figurine.figurine.id%>">
                     <button class="remove__button"> Retirer </button>
                 </a>
             </div>
@@ -39,9 +39,9 @@
                 Total :
             </div>
             <div class="price__infos">
-                <span class="price__ht"> HT : 1300€</span>
-                <span class="price__tax"> Taxe : 51561€ </span>
-                <span class="price__ttc"> TTC : 5131351€ </span>
+                <span class="price__ht"> HT : <%=totalHT%>€</span>
+                <span class="price__tax"> Taxe : <%=tax%>€ </span>
+                <span class="price__ttc"> TTC : <%=totalTTC%>€ </span>
                 
                 
                 <div class="checkout__button--container">
