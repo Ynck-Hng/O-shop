@@ -83,5 +83,5 @@ INSERT INTO "review" ("user_id", "note", "title", "message", "figurine_id") VALU
 (8,5, 'Très belle figurine', 'Très contente de mon achat. Bonne qualité et taille convenable.' ,5),
 
 (2,1, 'Un ratâge !', 'Les proportions ne correspondent pas à la photo. Très déçue.' ,6),
-(3,0, 'A éviter !', 'La figurine est arrivée cassée ! Malgré les réparations, elle reste moche.' ,6),
+(3,1, 'A éviter !', 'La figurine est arrivée cassée ! Malgré les réparations, elle reste moche.' ,6),
 (4,2, 'Assez déçu', 'Malheureusement, la figurine ne représente pas fidèlement le personnage.' ,6);

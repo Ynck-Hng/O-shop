@@ -5,7 +5,6 @@ const categoryController = {
 
     categoryFilter: errorCatcher(async (req,res)=>{
         const categoryName = req.params.categoryName;
-        
         const result = await Review.findAll({
             attributes: [[sequelize.fn('AVG', sequelize.col("note")), "note"]],
             group: ["figurine.id"],
@@ -17,28 +16,21 @@ const categoryController = {
                 }
             }
         });
-
         const result2 = await Figurine.findAll({
             where:{
                 category: categoryName,
             }
         });
-
         let idContainer = [];
-
         for(let figurine of result2){
             idContainer.push(figurine.id);
-            console.log(figurine.id);
         }
-
-        for(let i = 1; i<=result.length; i++){
-            console.log(i);
+        for(let i = 1; i<=result2.length; i++){
             if(!result.find(figurine => figurine.figurine.id === idContainer[i-1])){
-                let figurine = result2.find(figurine => figurine.id === i);
+                let figurine = result2.find(figurine => figurine.id === idContainer[i-1]);
                 result.push({note: 0, figurine});
             }
         }
-
         const categories = [];
         const categoriesCountTotal = [];
         for(let element of result){
@@ -56,9 +48,7 @@ const categoryController = {
                 categoriesCountTotal.push({name: `${category}`, count});
             }
         }
-        
         res.locals.meta.title = `O'Shop - ${categoryName}`;
-
         res.render("home", {figurines: result, categories: categoriesCountTotal});
     }),
 
