@@ -5,6 +5,10 @@ const bcrypt = require("bcrypt");
 const signinController = {
     signinPage: (req,res)=>{
         let errorSignin = [];
+
+        const test = "machin";
+        console.log(`${test.charAt(0).toUpperCase() + test.slice(1).toLowerCase()}`)
+
         res.locals.meta.title = "O'Shop - Inscription";
         res.render("signin", {errorSignin});
     },
@@ -52,9 +56,9 @@ const signinController = {
         } else {
             
             const user = {
-                firstname: userInfo.firstname__submit,
-                lastname: userInfo.lastname__submit,
-                email: userInfo.email__submit,
+                firstname: `${userInfo.firstname__submit.charAt(0).toUpperCase() + userInfo.firstname__submit.slice(1).toLowerCase()}`,
+                lastname: `${userInfo.lastname__submit.charAt(0).toUpperCase() + userInfo.lastname__submit.slice(1).toLowerCase()}`,
+                email: userInfo.email__submit.toLowerCase(),
                 password: hashPassword,
             }
 

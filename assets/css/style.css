@@ -531,6 +531,20 @@ textarea {
   font-size: 1.2rem;
   text-align: center;
 }
+.reviews .review__delete {
+  background-color: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.5em;
+  margin-top: 1em;
+  border-radius: 5px;
+}
+.reviews .review__delete:active {
+  background-color: white;
+  color: black;
+}
 
 /* cart */
 .cart__title {

@@ -17,6 +17,16 @@ Review.belongsTo(Figurine,{
 
 // User - Reviews
 
+User.hasMany(Review,{
+    as: "reviews",
+    foreignKey: "user_id"
+})
+
+Review.belongsTo(User, {
+    as: "user",
+    foreignKey: "user_id"
+})
+
 // User - Roles
 
 Roles.hasMany(User,{

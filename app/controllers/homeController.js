@@ -12,6 +12,9 @@ const homeController = {
             order: [['note', 'DESC']],
             include:"figurine",
         });
+
+        const result2 = await Figurine.findAll();
+        
         const categories = [];
         const categoriesCountTotal = [];
         for(let element of result){

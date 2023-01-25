@@ -17,7 +17,11 @@
             <p class="item__text"> <%=figurine.description%></p>
             
             <div class="item__rating">
-                Moyenne : <%=Math.round(rating*10) / 10%> / 5
+                <%if(rating.length > 0){%>
+                    Moyenne : <%=Math.round(Number(rating[0].note)*10) / 10%> / 5
+                <%}else {%>
+                    Il n'y a pas encore de moyenne pour l'instant... :(
+                <%}%>
             </div>
 
             <div class="item__price">
@@ -43,10 +47,10 @@
         <%} else {%>
             
             <h2 class="user__review--title"> Votre avis compte ! Dites-nous ce que vous en pensez</h2>
-            
-            <form method="POST" action="/item/review/add">
+
+            <form method="POST" action="/item/<%=figurine.id%>/review/add">
                 <div class="user__review--header">
-                    <input type="text" name="review__title" id="review__title" maxlength="20" placeholder="Votre avis en un mot">
+                    <input type="text" name="review__title" id="review__title" maxlength="20" placeholder="Votre avis en un mot" required>
                     <input type="hidden" name="review__figurineId" value="<%=figurine.id%>">
                     <label for="review__rating" class="rating__label"> Note:</label>
                     <select name="review__rating" id="review__rating">
@@ -59,7 +63,7 @@
                 </div>
                 
                 <div class="user__review--body">
-                    <textarea id="review__content" name="review__content" maxlength="255" placeholder="Description... (Max 255 lettres)"></textarea>
+                    <textarea id="review__content" name="review__content" maxlength="255" placeholder="Description... (Max 255 lettres)" required></textarea>
                 </div>
                 
                 <button type="submit" class="review__submit"> Envoyer </button>
@@ -70,12 +74,22 @@
         
         <div class="reviews__container">
         <h2 class="reviews__label"> Avis des utilisateurs </h2>
-        <%for(let review of reviews){%>
-            <div class="reviews">
-                <p class="review__author"> <%=review.author%> - Note : <%=review.note%> / 5 </p>
-                <p class="review__title"> Avis : <%=review.title%> </p>
-                <p class="review__description"> <%=review.message%> </p>
-            </div>
+        <%if(reviews.length > 0){%>
+            <%for(let review of reviews){%>
+                <div class="reviews">
+                    <p class="review__author"> <%=review.user.firstname%> <%=review.user.lastname%> - Note : <%=review.note%> / 5 </p>
+                    <p class="review__title"> Avis : <%=review.title%> </p>
+                    <p class="review__description"> <%=review.message%> </p>
+                    <%if(locals.session.user){%>
+                        <%if(locals.session.user.roles === "admin" || locals.session.user && locals.session.user.id === review.user.id){%>
+                            <a href="<%=figurine.id%>/review/delete/<%=review.id%>"><button class="review__delete"> Supprimer </button></a>
+                        <%}%>
+                    <%}%>
+                </div>
+            <%}%>
+        <%} else {%>
+            
+            <h2> Il n'y a pas encore de commentaire pour cet article... :(</h2>
         <%}%>
 
     </div>

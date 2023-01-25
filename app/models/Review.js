@@ -4,17 +4,23 @@ const sequelize = require("./database/sequelize");
 class Review extends Sequelize.Model{}
 
 Review.init({
-    author:{
-        type: Sequelize.STRING,
+    user_id:{
+        type: Sequelize.INTEGER,
         allowNull: false,
+        validate:{
+            isInt: true,
+        }
     },
     note:{
         type: Sequelize.INTEGER,
         allowNull: false,
+        validate:{
+            isInt: true,
+        }
     },
     title:{
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
     },
     message:{
         type: Sequelize.STRING,
@@ -23,6 +29,9 @@ Review.init({
     figurine_id:{
         type: Sequelize.INTEGER,
         allowNull: false,
+        validate:{
+            isInt: true
+        }
     }
 },{
     tableName: "review",

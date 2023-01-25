@@ -186,6 +186,22 @@
         font-size: 1.2rem;
         text-align: center;
     }
+
+    .review__delete{
+        background-color: red;
+        border: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding: 0.5em;
+        margin-top: 1em;
+        border-radius: 5px;
+    }
+
+    .review__delete:active{
+        background-color: white;
+        color: black;
+    }
 }
 
 

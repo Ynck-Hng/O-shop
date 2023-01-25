@@ -1,26 +1,30 @@
 const sequelize = require("./../models/database/sequelize");
 const {errorCatcher} = require("./../middlewares/errorHandler/errorHandler");
 const {Review, Figurine} = require("./../models");
+
 const itemController = {
 
     itemPage: errorCatcher(async (req,res)=>{
         const figurineId = Number(req.params.figurineId);
-        const figurineInfo = await Review.findAll({
+        let reviewAverage;
+        reviewAverage = await Review.findAll({
             attributes: [[sequelize.fn("AVG", sequelize.col("note")), "note"]],
-            group: ["figurine.id"],
             where:{
                 figurine_id: figurineId
             },
-            include: "figurine"
+            group: ["figurine_id"],
         })
-
+        const figurine = await Figurine.findByPk(figurineId)
+        
         const reviews = await Review.findAll({
+            include:"user",
             where:{
                 figurine_id: figurineId,
-            }
+            },
+            order: [["note", "DESC"]]
         })
-        res.locals.meta.title = `O'Shop - ${figurineInfo[0].figurine.name}`;
-        res.render("item", {reviews, figurine: figurineInfo[0].figurine, rating: figurineInfo[0].note});
+        res.locals.meta.title = `O'Shop - ${figurine.name}`;
+        res.render("item", {reviews, figurine, rating: reviewAverage});
     }),
 
     addReviewToItem: errorCatcher(async(req,res)=>{
@@ -30,36 +34,43 @@ const itemController = {
         }
 
         const {review__title, review__figurineId, review__rating, review__content} = req.body;
-
-        const errorReview = [];
-        console.log(typeof review__figurineId);
      
         const findFigurine = await Figurine.findByPk(review__figurineId);
-        console.log("JE PAAASEE");
+ 
         if(!findFigurine){
             return res.status(404).render("404");
         }
 
-        if(!review__title || review__title.length < 2){
-            errorReview.push({message: "Votre avis ne peut pas être vide ou doit contenir au moins 3 lettres."})
-        }
-
-        if(!review__content || review__content.length < 3){
-            errorReview.push({message: "Votre description ne peut pas être vide ou doit contenir au moins 4 lettres."})
-        }
-
         const review = {
-            author: res.locals.session.user.firstname,
-            note: Number(review__rating),
+            user_id: res.locals.session.user.id,
+            note: review__rating,
             title: review__title,
             message: review__content,
-            figurine_id: Number(review__figurineId)
+            figurine_id: review__figurineId
+        }
+           
+        const result = await Review.create(review);
+    
+        res.redirect(req.get("referrer"));
+
+    }),
+
+    deleteReview: errorCatcher(async(req,res)=>{
+        const reviewId = req.params.reviewId;
+
+        if(isNaN(reviewId)){
+            return res.status(404).render("404");
         }
 
-        const result = await Review.create(review);
+        const findReview = await Review.findByPk(reviewId);
 
-        res.redirect("/");
+        if(!findReview){
+            return res.status(404).render("404");
+        }
 
+        await findReview.destroy();
+
+        res.redirect(req.get("referrer"));
     })
 }
 

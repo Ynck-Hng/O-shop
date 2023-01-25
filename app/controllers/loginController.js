@@ -14,7 +14,7 @@ const loginController = {
         let errorLogin = [];
         const findUser = await User.findOne({
             where:{
-                email: userCredentials.email__login,
+                email: userCredentials.email__login.toLowerCase(),
             },
             include: "roles"
         })
