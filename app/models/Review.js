@@ -9,7 +9,7 @@ Review.init({
         allowNull: false,
     },
     note:{
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
     },
     title:{

@@ -9,7 +9,6 @@ exports.errorCollector = (err,req,res,next)=>{
             "text/html": res.status(status).render("./error/404", {message: err.message, stack: err.stack})
         })
     } else {
-        console.log("non");
         res.format({
             "text/html": res.status(status).render("./error/505", {message: err.message, stack: err.stack})
             })

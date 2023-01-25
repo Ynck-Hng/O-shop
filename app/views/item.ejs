@@ -32,7 +32,43 @@
         </div>
     </div>
 
-    <div class="reviews__container">
+
+    <div class="user__review--container">
+
+        <%if(!locals.session.user){%>
+            <h2 class="user__review--title"> Connectez-vous pour partager votre avis ! </h2>
+
+             <a href="/login" class="account__login--link">Cliquez ici</a>
+            
+        <%} else {%>
+            
+            <h2 class="user__review--title"> Votre avis compte ! Dites-nous ce que vous en pensez</h2>
+            
+            <form method="POST" action="/item/review/add">
+                <div class="user__review--header">
+                    <input type="text" name="review__title" id="review__title" maxlength="20" placeholder="Votre avis en un mot">
+                    <input type="hidden" name="review__figurineId" value="<%=figurine.id%>">
+                    <label for="review__rating" class="rating__label"> Note:</label>
+                    <select name="review__rating" id="review__rating">
+                        <option value="5"> 5 </option>
+                        <option value="4"> 4 </option>
+                        <option value="3"> 3 </option>
+                        <option value="2"> 2 </option>
+                        <option value="1"> 1 </option>
+                    </select>
+                </div>
+                
+                <div class="user__review--body">
+                    <textarea id="review__content" name="review__content" maxlength="255" placeholder="Description... (Max 255 lettres)"></textarea>
+                </div>
+                
+                <button type="submit" class="review__submit"> Envoyer </button>
+            </form>
+            <%}%>
+        </div>
+        
+        
+        <div class="reviews__container">
         <h2 class="reviews__label"> Avis des utilisateurs </h2>
         <%for(let review of reviews){%>
             <div class="reviews">

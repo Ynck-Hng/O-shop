@@ -29,9 +29,8 @@ const loginController = {
             res.status(400).render("login", {errorLogin});
         }
 
-        console.log(findUser.toJSON());
-
         req.session.user = {
+            id: findUser.id,
             firstname: findUser.firstname,
             lastname: findUser.lastname,
             email: findUser.email,

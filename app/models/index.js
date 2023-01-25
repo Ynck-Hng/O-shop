@@ -15,6 +15,8 @@ Review.belongsTo(Figurine,{
     foreignKey: "figurine_id"
 })
 
+// User - Reviews
+
 // User - Roles
 
 Roles.hasMany(User,{
