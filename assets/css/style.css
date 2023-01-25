@@ -518,14 +518,16 @@ textarea {
   border-bottom-right-radius: 10px;
   padding-bottom: 1em;
 }
-.reviews .review__author {
+.reviews .review__author, .reviews .review__reviewless {
   font-size: 1.5rem;
   padding-top: 1em;
+  text-align: center;
 }
 .reviews .review__title {
   font-size: 1.6rem;
   padding: 1em 0 2em 0;
   font-weight: bold;
+  text-align: center;
 }
 .reviews .review__description {
   font-size: 1.2rem;
@@ -544,6 +546,10 @@ textarea {
 .reviews .review__delete:active {
   background-color: white;
   color: black;
+}
+.reviews .review__reviewless {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
 }
 
 /* cart */

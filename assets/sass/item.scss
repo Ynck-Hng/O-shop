@@ -174,12 +174,14 @@
     .review__author{
         font-size: 1.5rem;
         padding-top: 1em;
+        text-align: center;
     }
 
     .review__title{
         font-size: 1.6rem;
         padding: 1em 0 2em 0;
         font-weight: bold;
+        text-align: center;
     }
 
     .review__description{
@@ -201,6 +203,12 @@
     .review__delete:active{
         background-color: white;
         color: black;
+    }
+
+    .review__reviewless{
+        @extend .review__author;
+        padding-top: 1em;
+        padding-bottom: 0.5em;
     }
 }
 

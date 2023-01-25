@@ -17,6 +17,28 @@ const categoryController = {
                 }
             }
         });
+
+        const result2 = await Figurine.findAll({
+            where:{
+                category: categoryName,
+            }
+        });
+
+        let idContainer = [];
+
+        for(let figurine of result2){
+            idContainer.push(figurine.id);
+            console.log(figurine.id);
+        }
+
+        for(let i = 1; i<=result.length; i++){
+            console.log(i);
+            if(!result.find(figurine => figurine.figurine.id === idContainer[i-1])){
+                let figurine = result2.find(figurine => figurine.id === i);
+                result.push({note: 0, figurine});
+            }
+        }
+
         const categories = [];
         const categoriesCountTotal = [];
         for(let element of result){

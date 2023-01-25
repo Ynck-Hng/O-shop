@@ -14,6 +14,13 @@ const homeController = {
         });
 
         const result2 = await Figurine.findAll();
+
+        for(let i = 1; i<=result.length; i++){
+            if(!result.find(figurine => figurine.figurine.id === i)){
+                let figurine = result2.find(figurine => figurine.id === i);
+                result.push({note: 0, figurine})
+            }
+        }
         
         const categories = [];
         const categoriesCountTotal = [];
@@ -32,10 +39,8 @@ const homeController = {
                 categoriesCountTotal.push({name: `${category}`, count});
             }
         }
-        res.render("home", {figurines: result, categories: categoriesCountTotal});
+        res.render("home", {figurines: result, figurinesNoReview: result2, categories: categoriesCountTotal});
     }),
-
-    
 
 }
 

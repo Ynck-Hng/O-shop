@@ -28,12 +28,16 @@
                     </div>
                 </div>
                 
-                <a class="product_name--link" href="">
+                <a class="product_name--link" href="/item/<%=figurine.figurine.id%>">
                     <div class="product__name"> <a href="/item/<%=figurine.figurine.id%>"> <%=figurine.figurine.name%> </a> </div>
                 </a>
                 <div class="company"> Vendeur : O'Shop & Co </div>
                 <div class="price"> <%=figurine.figurine.price%>€ </div>
-                <div class="rating"> Avis : <%=Math.round(figurine.note*10) / 10%> / 5 </div>
+                <%if(figurine.note === 0){%>
+                    <div class="rating"> Avis : N/A / 5 </div>
+                <%} else {%>
+                    <div class="rating"> Avis : <%=Math.round(figurine.note*10) / 10%> / 5 </div>
+                <%}%>
                 <a class="addCart__link" href="/cart/add/<%=figurine.figurine.id%>"><button class="addCart"> Ajouter au panier </button></a>
             </article>
         <%}%>
