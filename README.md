@@ -22,7 +22,7 @@ Ce projet a été réalisé en utilisant NodeJS, Express, PostgresSQL et Sequeli
 
 ##  - Si vous êtes intéressé.e.s, vous pouvez mettre en place ce projet localement sur votre machine en suivant ces étapes :
 
-1) Après avoir cloné de répertoire, assurez-vous d'installer les dépendances avec la commande `npm install`.
+1) Après avoir cloné le répertoire, assurez-vous d'installer les dépendances avec la commande `npm install`.
 2) Mettez en place la base de données localement et récupérer les données nécessaires pour ce projet depuis le dossier `data` dans le fichier `create_db.sql`.
 3) Remplissez votre fichier .env en vous appuyant sur le fichier `env_example` fourni.
 4) Et voilà tout est prêt ! Vous pouvez désormais lancer ce projet localement en entrant la commande `nodemon index.js` ou `node-dev index.js` dans votre terminal.
