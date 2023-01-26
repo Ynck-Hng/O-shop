@@ -33,7 +33,7 @@ This section will provide you with the database structure and the login credenti
 
 Here is Mocodo representation of the database we are using :
 
-![image](https://user-images.githubusercontent.com/115977341/214815900-6ca92bb7-6a31-47d3-828a-275d86e90a88.png)
+![image](https://user-images.githubusercontent.com/115977341/214819400-aff87e4f-00a3-4e64-bc75-0c275ca24011.png)
 
 And the Mocodo code itself : 
 
@@ -41,7 +41,7 @@ And the Mocodo code itself :
 users: code_users, firstname, lastname, email, password, role_id, created_at, updated_at
 write, 1N users, 11 review
 review: code_review, code_users, code_figurine, note, title, message, created_at
-has, 11 review, 1N figurine
+have, 11 review, 1N figurine
 figurine: code_figurine, name, description, size, category
 
 belong, 11 users, 1N roles
@@ -57,5 +57,11 @@ By default, all newly created accounts will be `Client` accounts, for safety mea
 If you would like to use the `Admin` account, enter in the form : email : `admin@admin.com`, passsword : `admin`.
 If you would like to use the `Client` account, enter in the form : email : `johndoe@client.com`, password : `client`.
 
+All other accounts stored in the database will follow this pattern : email : `firstnamelastname@client.com`, password : `firstnamelastname`
+
 Or, you can create your own account and try out the sign-in and login form at the same time ! :thumbsup:
+
+:warning::warning: While emails are not case-sensitive, passwords are. Make sure to double-check that your password is typed correctly.  :warning::warning:
+
+
 
