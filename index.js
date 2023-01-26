@@ -26,15 +26,10 @@ app.use(
         }
     })
 )
-
 app.use(userSession);
-
 app.use(cart);
-
 app.use(meta);
-
 app.use(router);
-
 app.use(notFound);
 app.use(errorCollector);
 
