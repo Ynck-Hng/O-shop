@@ -75,8 +75,17 @@ Vous pouvez également réinitialiser votre base de donnée en important le fich
 
 ---------------------------------
 
-### Merci pour l'intérêt que vous avez porté pour ce projet ! A bientôt !
+### Merci pour l'intérêt que vous avez porté pour ce projet ! A bientôt ! :wave:
 
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+# <p align="center"> :tada: O'Shop :tada: </p>
 ---------------------------------
 
 ## <a id="english"></a> Welcome to this E-Shop portfolio project !
