@@ -1,6 +1,6 @@
 const reviewErrorChecker = () => {
     const addReviewButton = document.getElementById("review__submit");
-    // If button exists, we are on item page
+    // If button exists, we are on item page and the code will be used on review submit
     if(addReviewButton){
         const reviewTitle = document.getElementById("review__title");
         const reviewContent = document.getElementById("review__content");
