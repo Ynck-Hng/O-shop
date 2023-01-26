@@ -48,7 +48,7 @@
             
             <h2 class="user__review--title"> Votre avis compte ! Dites-nous ce que vous en pensez</h2>
 
-            <form method="POST" action="/item/<%=figurine.id%>/review/add">
+            <form method="POST" action="/item/<%=figurine.id%>/review/add" id="form__review">
                 <div class="user__review--header">
                     <input type="text" name="review__title" id="review__title" maxlength="20" placeholder="Votre avis en un mot" required>
                     <input type="hidden" name="review__figurineId" value="<%=figurine.id%>">
@@ -66,7 +66,7 @@
                     <textarea id="review__content" name="review__content" maxlength="255" placeholder="Description... (Max 255 lettres)" required></textarea>
                 </div>
                 
-                <button type="submit" class="review__submit"> Envoyer </button>
+                <button type="submit" class="review__submit" id="review__submit"> Envoyer </button>
             </form>
             <%}%>
         </div>

@@ -28,27 +28,22 @@ const itemController = {
     }),
 
     addReviewToItem: errorCatcher(async(req,res)=>{
-        
         if(!res.locals.session.user){
             return res.status(403).render("403");
         }
-
         const {review__title, review__figurineId, review__rating, review__content} = req.body;
-     
         const findFigurine = await Figurine.findByPk(review__figurineId);
- 
         if(!findFigurine){
             return res.status(404).render("404");
         }
-
         const review = {
             user_id: res.locals.session.user.id,
             note: review__rating,
-            title: review__title,
-            message: review__content,
+            title: `${review__title.charAt(0).toUpperCase() + review__title.slice(1).toLowerCase()}`,
+            message: `${review__content.charAt(0).toUpperCase() + review__title.slice(1).toLowerCase()}`,
             figurine_id: review__figurineId
         }
-           
+
         const result = await Review.create(review);
     
         res.redirect(req.get("referrer"));
@@ -71,7 +66,7 @@ const itemController = {
         await findReview.destroy();
 
         res.redirect(req.get("referrer"));
-    })
+    }),
 }
 
 module.exports = itemController;

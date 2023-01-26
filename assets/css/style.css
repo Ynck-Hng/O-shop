@@ -552,6 +552,15 @@ textarea {
   padding-bottom: 0.5em;
 }
 
+#error__review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  font-size: 1rem;
+  margin-top: 1em;
+}
+
 /* cart */
 .cart__title {
   font-size: 3rem;
@@ -683,6 +692,7 @@ input[type=number] {
 .errorLogin__container {
   margin-top: 3em;
   color: red;
+  text-align: center;
 }
 
 input {
