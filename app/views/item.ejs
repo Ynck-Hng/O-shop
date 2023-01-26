@@ -11,14 +11,14 @@
         <div class="item__description--container">
 
             <h2 class="item__name">
-                <%=figurine.name%>
+                <%=figurine.name%> - <%=figurine.size%>cm
             </h2>
 
             <p class="item__text"> <%=figurine.description%></p>
             
             <div class="item__rating">
                 <%if(rating.length > 0){%>
-                    Moyenne : <%=Math.round(Number(rating[0].note)*10) / 10%> / 5
+                    Moyenne des avis : <%=Math.round(Number(rating[0].note)*10) / 10%> / 5
                 <%}else {%>
                     Il n'y a pas encore de moyenne pour l'instant... :(
                 <%}%>
