@@ -5,7 +5,7 @@ Welcome to this E-Shop portfolio project !
 The point of this project was to practice implementing common e-shop features such as :
 
 - Setting up the main page
-- Spen an article page 
+- Open an article page 
 - Sorting by categories
 - Managing authentications and user sign-ins
 - Secured routes
@@ -33,14 +33,14 @@ This section will provide you with the database structure and the login credenti
 
 Here is Mocodo representation of the database we are using :
 
-![image](https://user-images.githubusercontent.com/115977341/214819400-aff87e4f-00a3-4e64-bc75-0c275ca24011.png)
+![image](https://user-images.githubusercontent.com/115977341/214824902-b2841cd4-4cff-47bb-abef-68872ecc063c.png)
 
 And the Mocodo code itself : 
 
 ```
 users: code_users, firstname, lastname, email, password, role_id, created_at, updated_at
 write, 1N users, 11 review
-review: code_review, code_users, code_figurine, note, title, message, created_at
+review: code_review, code_users, code_figurine, note, title, message
 have, 11 review, 1N figurine
 figurine: code_figurine, name, description, size, category
 
@@ -63,5 +63,4 @@ Or, you can create your own account and try out the sign-in and login form at th
 
 :warning::warning: While emails are not case-sensitive, passwords are. Make sure to double-check that your password is typed correctly.  :warning::warning:
 
-
-
+---------------------------------
