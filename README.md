@@ -2,6 +2,8 @@
 
 Le README de ce projet contient une version [française](#french) et une version [anglaise](#english). Cliquez sur la version que vous souhaitez lire !
 
+This project's README presentation contains a [french](#french) and [english](#english) version. Click on the version you would like to read !
+
 ## <a id="french"></a> Bienvenue sur ce projet-portfolio e-commerce
 
 L'objectif de ce projet était de pratiquer l'implémentation de fonctionnalités classiques d'un site d'e-commerce, telles que :
