@@ -18,7 +18,7 @@ L'objectif de ce projet était de pratiquer l'implémentation de fonctionnalité
 - Rendu dynamique (Back-end au Front-end + DOM) :white_check_mark: 
 - Responsive CSS (utilisation de CSS et SCSS) :white_check_mark: 
 
-Ce projet a été réalisé en utilisant NodeJS, Express, PostgresSQL et Sequelize côté Back-end, EJS (for templating), HTML5, CSS, et SCSS côté Front-end. 
+Ce projet a été réalisé en utilisant NodeJS, Express, PostgresSQL et Sequelize côté Back-end, EJS (templating), HTML5, CSS, et SCSS côté Front-end. 
 
 ##  - Si vous êtes intéressé.e.s, vous pouvez mettre en place ce projet localement sur votre machine en suivant ces étapes :
 
