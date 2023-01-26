@@ -1,6 +1,6 @@
 # <p align="center"> :tada: O'Shop :tada: </p>
 
-[https://github.com/Ynck-Hng/O-shop/edit/main/README.md](#english)
+[test](#english)
 
 
 
