@@ -86,7 +86,6 @@ Vous pouvez également réinitialiser votre base de donnée en important le fich
 <br/>
 
 # <p align="center"> :tada: O'Shop :tada: </p>
----------------------------------
 
 ## <a id="english"></a> Welcome to this E-Shop portfolio project !
 
