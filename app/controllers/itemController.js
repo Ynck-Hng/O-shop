@@ -39,8 +39,8 @@ const itemController = {
         const review = {
             user_id: res.locals.session.user.id,
             note: review__rating,
-            title: `${review__title.charAt(0).toUpperCase() + review__title.slice(1).toLowerCase()}`,
-            message: `${review__content.charAt(0).toUpperCase() + review__title.slice(1).toLowerCase()}`,
+            title: `${review__title.charAt(0).toUpperCase() + review__title.slice(1).toLowerCase().replace(/[^a-zA-Z0-9]/g, "")}`,
+            message: `${review__content.charAt(0).toUpperCase() + review__content.slice(1).replace(/[^a-zA-Z0-9]/g, "")}`,
             figurine_id: review__figurineId
         }
         const result = await Review.create(review);
@@ -56,8 +56,15 @@ const itemController = {
         if(!findReview){
             return res.status(404).render("404");
         }
-        await findReview.destroy();
-        res.redirect(req.get("referrer"));
+
+        if(req.session.user){
+            if(req.session.user.roles === "admin" || findReview.user_id === req.session.user.id){
+                await findReview.destroy();
+               return res.redirect(req.get("referrer"));
+            } else {
+                return res.status(403).render("./error/403");
+            }
+        }
     }),
 }
 

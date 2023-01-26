@@ -19,7 +19,6 @@ const signinController = {
         if(!userInfo.lastname__submit){
             errorSignin.push({message: "Le nom est obligatoire"})
         }
-
         const checkEmail = emailValidator.validate(userInfo.email__submit)
         if(!checkEmail){
             errorSignin.push({message: "L'email est invalide"})
@@ -33,7 +32,7 @@ const signinController = {
 
         const findUser = await User.findOne({
             where:{
-                email: userInfo.email__submit,
+                email: userInfo.email__submit.toLowerCase(),
             }
         })
 
@@ -51,16 +50,16 @@ const signinController = {
             return res.status(400).render("signin", {errorSignin});
         } else {
             
-            const user = {
-                firstname: `${userInfo.firstname__submit.charAt(0).toUpperCase() + userInfo.firstname__submit.slice(1).toLowerCase()}`,
-                lastname: `${userInfo.lastname__submit.charAt(0).toUpperCase() + userInfo.lastname__submit.slice(1).toLowerCase()}`,
-                email: userInfo.email__submit.toLowerCase(),
-                password: hashPassword,
-            }
+        const user = {
+            firstname: `${userInfo.firstname__submit.charAt(0).toUpperCase() + userInfo.firstname__submit.slice(1).toLowerCase()}`,
+            lastname: `${userInfo.lastname__submit.charAt(0).toUpperCase() + userInfo.lastname__submit.slice(1).toLowerCase()}`,
+            email: userInfo.email__submit.toLowerCase(),
+            password: hashPassword,
+        }
 
-            const createUser = await User.create(user);
+        const createUser = await User.create(user);
 
-            res.redirect("/login");
+        res.redirect("/login");
         }
 
     })
