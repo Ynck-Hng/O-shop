@@ -641,7 +641,7 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 1.5em;
+  right: 2em;
 }
 
 .price__ht, .price__tax {
