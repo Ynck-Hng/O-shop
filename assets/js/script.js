@@ -14,7 +14,7 @@ const reviewErrorChecker = () => {
                         const formReview = document.getElementById("form__review");
                         const errorMessage = document.createElement("span");
                         errorMessage.setAttribute("id", "error__review");
-                        errorMessage.innerHTML = "Votre message ne peut pas être vide ou contenir de caractères spéciaux."
+                        errorMessage.textContent = "Votre message ne peut pas être vide ou contenir de caractères spéciaux."
                         formReview.appendChild(errorMessage);
                     }
                     event.preventDefault();
