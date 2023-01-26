@@ -3,7 +3,6 @@
 [https://github.com/Ynck-Hng/O-shop/edit/main/README.md](#english)
 
 
-<a href="english"> English </a>
 
 Welcome to this E-Shop portfolio project !
 
@@ -52,7 +51,7 @@ figurine: code_figurine, name, description, size, category
 belong, 11 users, 1N roles
 roles: code_roles, name
 ```
-
+<a href="english"> English </a>
 
 ### - Login informations
 
