@@ -53,12 +53,9 @@
     border: none;
 }
 
-.admin__link{
-    border-left: none;
-}
-
-.about__link{
+.admin__link, .client__link{
     border: none;
+    border-right: solid 1px lightgray;
 }
 
 .username{

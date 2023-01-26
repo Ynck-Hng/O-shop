@@ -38,7 +38,6 @@ const loginController = {
         }
 
         res.redirect("/");
-        
     }),
 
 }
