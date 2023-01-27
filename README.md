@@ -17,6 +17,7 @@ L'objectif de ce projet était de pratiquer l'implémentation de fonctionnalité
 - Un panier totalement fonctionnel (hormis l'étape de paiement/achat) :white_check_mark: 
 - Rendu dynamique (Back-end au Front-end + DOM) :white_check_mark: 
 - Responsive CSS (utilisation de CSS et SCSS) :white_check_mark: 
+- Pratiquer Regex :white_check_mark:
 
 Ce projet a été réalisé en utilisant NodeJS, Express, PostgresSQL et Sequelize côté Back-end, EJS (templating), HTML5, CSS, et SCSS côté Front-end. 
 
@@ -100,6 +101,7 @@ The point of this project was to practice implementing common e-shop features su
 - A fully functional cart (excluding the purchasing step) :white_check_mark: 
 - Dynamic rendering (From Back-end to Front-end + DOM) :white_check_mark: 
 - Responsive css (using CSS and SCSS) :white_check_mark: 
+- Practice Regex :white_check_mark:
 
 This project was made using NodeJS, Express, PostgresSQL and Sequelize on the Back-end side, EJS (for templating), HTML5, CSS, and SCSS for the Front-end. 
 
