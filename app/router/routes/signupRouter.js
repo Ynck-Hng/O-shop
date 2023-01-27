@@ -1,11 +1,12 @@
 const express =require("express");
 const router = express.Router();
-const signinController = require("./../../controllers/signinController");
+const signupController = require("./../../controllers/signupController");
 const {userForbidden} = require("./../../middlewares/userForbidden/userForbidden");
-// Currently on /signin
+
+// Currently on /signup
 
 router.route("/")
-    .get(userForbidden, signinController.signinPage)
-    .post(signinController.signinSuccess);
+    .get(userForbidden, signupController.signupPage)
+    .post(signupController.signupSuccess);
 
 module.exports = router;

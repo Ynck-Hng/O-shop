@@ -2,32 +2,32 @@ const {errorCatcher} = require("./../middlewares/errorHandler/errorHandler");
 const {User} = require("./../models");
 const emailValidator = require("email-validator");
 const bcrypt = require("bcrypt");
-const signinController = {
-    signinPage: (req,res)=>{
-        let errorSignin = [];
+const signupController = {
+    signupPage: (req,res)=>{
+        let errorSignup = [];
         res.locals.meta.title = "O'Shop - Inscription";
-        res.render("signin", {errorSignin});
+        res.render("signup", {errorSignup});
     },
 
-    signinSuccess: errorCatcher(async(req,res)=>{
+    signupSuccess: errorCatcher(async(req,res)=>{
         const userInfo = req.body;
-        let errorSignin = [];
+        let errorSignup = [];
 
         if(!userInfo.firstname__submit){
-            errorSignin.push({message: "Le prénom est obligatoire"})
+            errorSignup.push({message: "Le prénom est obligatoire"})
         }
         if(!userInfo.lastname__submit){
-            errorSignin.push({message: "Le nom est obligatoire"})
+            errorSignup.push({message: "Le nom est obligatoire"})
         }
         const checkEmail = emailValidator.validate(userInfo.email__submit)
         if(!checkEmail){
-            errorSignin.push({message: "L'email est invalide"})
+            errorSignup.push({message: "L'email est invalide"})
         }
         if(!userInfo.password__submit){
-            errorSignin.push({message: "Le mot de passe est obligatoire"})
+            errorSignup.push({message: "Le mot de passe est obligatoire"})
         }
         if(!userInfo.passwordConfirm__submit){
-            errorSignin.push({message: "Le mot de passe de confirmation est incorrect"})
+            errorSignup.push({message: "Le mot de passe de confirmation est incorrect"})
         }
 
         const findUser = await User.findOne({
@@ -37,17 +37,17 @@ const signinController = {
         })
 
         if(findUser){
-            errorSignin.push({message: "Email déjà utilisé"});
+            errorSignup.push({message: "Email déjà utilisé"});
         }
 
         const hashPassword = bcrypt.hashSync(userInfo.passwordConfirm__submit, 10);
         const isPasswordIdentical = bcrypt.compare(userInfo.password__submit, hashPassword);
         if(!isPasswordIdentical){
-            errorSignin.push({message: "Le mot de passe de confirmation n'est pas identique au mot de passe saisi"});
+            errorSignup.push({message: "Le mot de passe de confirmation n'est pas identique au mot de passe saisi"});
         }
 
-        if(errorSignin.length > 0){
-            return res.status(400).render("signin", {errorSignin});
+        if(errorSignup.length > 0){
+            return res.status(400).render("signup", {errorSignup});
         } else {
             
         const user = {
@@ -65,4 +65,4 @@ const signinController = {
     })
 }
 
-module.exports = signinController;
+module.exports = signupController;

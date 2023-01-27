@@ -8,7 +8,10 @@
         <h2 class="category__label"> Catégories : </h2>
         <%for(let category of categories){%>
             <a href="/category/<%=category.name%>" class="badge__<%=category.name.toLowerCase()%>--link-container">
-                    <p class="<%=category.name.toLowerCase()%>__title category__title"> <%=category.name%> </p>
+                    <p class="<%=category.name.toLowerCase()%>__title category__title"> 
+                        <img src="/images/<%=category.name.toLowerCase()%>_icon.png" class="category__<%=category.name.toLowerCase()%>--icon category__icon"> 
+                        <%=category.name%> 
+                    </p>
                     <span class="quantity"> <%=category.count%> </span>   
             </a>
         <%}%>

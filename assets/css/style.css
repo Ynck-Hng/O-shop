@@ -137,11 +137,11 @@ textarea {
 
 .header__icon {
   width: 2em;
-  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
 
-.header__logout--icon {
-  margin-left: 0.5em;
+.header__signup--icon {
+  width: 1.4em;
 }
 
 .link {
@@ -204,21 +204,25 @@ textarea {
   margin: 1em 0;
 }
 
+.category__icon {
+  width: 1em;
+  margin-right: 0.5em;
+}
+
 .badge__gentil--link-container, .badge__animal--link-container, .badge__méchant--link-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.2em 0;
-  margin: 0.2em 0;
+  margin: 0.3em 0;
   border: solid 1px gray;
   width: 100%;
   background-image: linear-gradient(white, pink);
   color: black;
-  margin-top: 0.3em;
   border-radius: 5px;
 }
 .badge__gentil--link-container .category__title, .badge__animal--link-container .category__title, .badge__méchant--link-container .category__title {
-  margin-left: 1.5em;
+  margin-left: 1em;
   font-size: 1.5rem;
 }
 .badge__gentil--link-container .quantity, .badge__animal--link-container .quantity, .badge__méchant--link-container .quantity {
@@ -436,7 +440,7 @@ textarea {
 
 .item__icon {
   width: 1em;
-  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
 
 .button__add:active, .button__purchase:active {
@@ -673,7 +677,7 @@ input[type=number] {
 }
 
 .checkout__button {
-  background-color: gray;
+  background-color: black;
   border: none;
   font-size: 2rem;
   font-weight: bold;
@@ -681,6 +685,15 @@ input[type=number] {
   margin-top: 0.3em;
   width: 100%;
   color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout__icon {
+  width: 1em;
+  margin-left: 0.5em;
 }
 
 .checkout__button:active {
@@ -748,13 +761,13 @@ input {
   margin-top: 4em;
 }
 
-.account__signin--link {
+.account__signup--link {
   color: blue;
   text-decoration: underline;
 }
 
-/* signin */
-.signin__form--container {
+/* signup */
+.signup__form--container {
   min-height: 80vh;
   width: 60%;
   margin: 4em 0;
@@ -767,12 +780,12 @@ input {
   border-radius: 10px;
 }
 
-.signin__title {
+.signup__title {
   font-size: 3rem;
   margin: 0.5em 0;
 }
 
-.errorSignin__container {
+.errorSignup__container {
   color: red;
   line-height: 1.2em;
   margin-bottom: 1em;
@@ -794,7 +807,7 @@ input {
   justify-content: center;
 }
 
-.signin__button--submit {
+.signup__button--submit {
   width: 80%;
   padding: 0.5em 0;
   background-color: black;
