@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
     <script src="/js/script.js" defer></script>
     <title><%=locals.meta.title%></title>
 </head>
@@ -24,9 +25,9 @@
                     La boutique de figurines
                 </div>
                 <div class="header__nav--links">
-                    <a class="cart__link link" href="/cart"> Panier </a>
+                    <a class="cart__link link" href="/cart"> <img src="/images/cart_icon.png" class="header__cart--icon header__icon"> Panier </a>
                     <%if(locals.session.user === undefined){%>
-                        <a class="login__link link" href="/login"> Se connecter</a>
+                        <a class="login__link link" href="/login"> <img src="/images/login_icon.png" class="header__login--icon header__icon"> Se connecter</a>
                         <a class="signin__link link" href="/signin"> S'inscrire </a>
                     <%} else {%>
                         <%if(locals.session.user.roles === "admin"){%>
@@ -34,8 +35,8 @@
                         <%} else {%>
                             <a class="client__link link" href="#"> Client </a>
                         <%}%>
-                        <span class="username"> <%=locals.session.user.firstname%> <%=locals.session.user.lastname%></span>
-                        <a class="logout__link link" href="/logout"> Se déconnecter </a>
+                        <span class="username"> <img src="/images/login_icon.png" class="header__login--icon header__icon"> <%=locals.session.user.firstname%> <%=locals.session.user.lastname%> </span>
+                        <a class="logout__link link" href="/logout"> Se déconnecter <img src="/images/logout_icon.png" class="header__logout--icon header__icon"> </a>
                     <%}%>
                 </div>
             </nav>

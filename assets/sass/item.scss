@@ -74,6 +74,14 @@
     border: none;
     padding: 1em;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item__icon{
+    width: 1em;
+    margin-right: 0.5em;
 }
 
 .button__add:active{
