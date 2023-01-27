@@ -25,8 +25,41 @@ const app = {
         }
     },
 
+    signupValueChecker: () => {
+        const createAccountButton = document.getElementById("signup__button--submit");
+        if(createAccountButton){
+            const usernameInput = document.getElementById("firstname__submit");
+            const lastnameInput = document.getElementById("lastname__submit");
+            createAccountButton.addEventListener("click", () => {
+                if(usernameInput.value !== null || lastnameInput.value !== null){
+                    const filterUsername = usernameInput.value.match("[^A-Za-z0-9 'éèàùîôç-]");
+                    const filterLastname = lastnameInput.value.match("[^A-Za-z0-9 'éèàùîôç-]");                    
+                    if(filterUsername !== null || filterLastname !== null){
+                        const inputErrorChecker = document.getElementById("input__filtered--error");
+                        if(!inputErrorChecker){
+                            const ulError = document.getElementById("errorSignup__container");
+                            const inputErrorMessage = document.createElement("li");
+                            inputErrorMessage.setAttribute("id", "input__filtered--error");
+                            inputErrorMessage.textContent = "• Votre prénom ou nom ne peut pas contenir certains caractères spéciaux."
+                            ulError.appendChild(inputErrorMessage);
+                        }
+                        event.preventDefault();
+                    }
+                }
+            })
+        }
+    },
+
+    disableButton: () => {
+        const createAccountButton = document.getElementById("signup__button--submit");
+        createAccountButton.addEventListener("click", () => {
+            event.preventDefault();
+        })
+    },
+
     init: () => {
         app.reviewErrorChecker();
+        app.signupValueChecker();
     }
 }
     

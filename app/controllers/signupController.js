@@ -12,7 +12,6 @@ const signupController = {
     signupSuccess: errorCatcher(async(req,res)=>{
         const userInfo = req.body;
         let errorSignup = [];
-
         if(!userInfo.firstname__submit){
             errorSignup.push({message: "Le prénom est obligatoire"})
         }
@@ -29,19 +28,16 @@ const signupController = {
         if(!userInfo.passwordConfirm__submit){
             errorSignup.push({message: "Le mot de passe de confirmation est incorrect"})
         }
-
         const findUser = await User.findOne({
             where:{
                 email: userInfo.email__submit.toLowerCase(),
             }
         })
-
         if(findUser){
             errorSignup.push({message: "Email déjà utilisé"});
         }
-
         const hashPassword = bcrypt.hashSync(userInfo.passwordConfirm__submit, 10);
-        const isPasswordIdentical = bcrypt.compare(userInfo.password__submit, hashPassword);
+        const isPasswordIdentical = await bcrypt.compare(userInfo.password__submit, hashPassword);
         if(!isPasswordIdentical){
             errorSignup.push({message: "Le mot de passe de confirmation n'est pas identique au mot de passe saisi"});
         }
