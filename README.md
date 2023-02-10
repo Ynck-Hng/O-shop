@@ -4,7 +4,7 @@ Le README de ce projet contient une version [française](#french) et une version
 
 This project's README presentation contains a [french](#french) and [english](#english) version. Click on the version you would like to read !
 
-## <a id="french"></a> Bienvenue sur ce projet-portfolio e-commerce
+## <a id="french"></a> :wave: Bienvenue sur ce projet-portfolio e-commerce !
 
 L'objectif de ce projet était de pratiquer l'implémentation de fonctionnalités classiques d'un site d'e-commerce, telles que :
 
@@ -21,20 +21,37 @@ L'objectif de ce projet était de pratiquer l'implémentation de fonctionnalité
 
 Ce projet a été réalisé en utilisant NodeJS, Express, PostgresSQL et Sequelize côté Back-end, EJS (templating), HTML5, CSS, et SCSS côté Front-end. 
 
-##  - Si vous êtes intéressé.e.s, vous pouvez mettre en place ce projet localement sur votre machine en suivant ces étapes :
+## :rocket: Si vous êtes intéressé.e.s, vous pouvez mettre en place ce projet localement sur votre machine en suivant ces étapes :
 
 1) Après avoir cloné le répertoire, assurez-vous d'installer les dépendances avec la commande `npm install`.
-2) Mettez en place la base de données localement et récupérer les données nécessaires pour ce projet depuis le dossier `data` dans le fichier `create_db.sql`.
-3) Remplissez votre fichier .env en vous appuyant sur le fichier `env_example` fourni.
+
+2) Créez la base de donnée PostgreSQL :
+
+&nbsp; &nbsp; &nbsp; &nbsp;  a) Connectez vous en tant que `postgres` en tapant la commande : `sudo -u -i postgres psql`.
+
+&nbsp; &nbsp; &nbsp; &nbsp;  b) Créez le propriétaire de la base de donnée du projet : `CREATE ROLE "username" WITH LOGIN PASSWORD 'password';`
+
+&nbsp; &nbsp; &nbsp; &nbsp;  c) Créez la base de donnée : `CREATE DATABASE "dbname" OWNER "username";`
+
+&nbsp; &nbsp; &nbsp; &nbsp;  d) Tapez `exit` pour vous déconnecter du superutilisateur `postgres`.
+
+&nbsp; &nbsp; &nbsp; &nbsp;  e) Importez la base de donnée : `psql -U "username" -d "dbname" -f ./data/create_db.sql`, puis tapez le MDP de l'étape B.
+
+&nbsp; &nbsp; &nbsp; &nbsp;  f) Connectez-vous à la base de donnée : `psql -U "username" -d "dbname"`, retapez votre MDP.
+
+&nbsp; &nbsp; &nbsp; &nbsp;  g) Voilà la base de donnée est créée et importée ! :tada: 
+
+3) Remplissez votre fichier .env en vous appuyant sur le fichier `env_example` fourni. (Attention à bien mettre votre "username", "password" et "dbname" définis à l'étape **2)b) et 2)c)**.
+
 4) Et voilà tout est prêt ! Vous pouvez désormais lancer ce projet localement en entrant la commande `nodemon index.js` ou `node-dev index.js` dans votre terminal.
 
 ----------------------------------
 
-# - Extras
+# :notebook: Extras
 
 Cette section comporte la structure de la base de donnée et les identifiants de connexions.
 
-### - Base de donnée
+### :computer: Base de donnée
 
 Ci-dessous une représentation Mocodo de la base de donnée utilisée :
 
@@ -53,13 +70,13 @@ belong, 11 users, 1N roles
 roles: code_roles, name
 ```
 
-### - Connexion
+### :lock: Connexion
 
 Il existe deux types de comptes pour se connecter en fonction de leur rôle : `Admin` et `Client`.
 
 Par défaut, les nouveaux comptes créés auront le rôle `Client`.
 
-### - Identifiants de connexion
+### :information_source: Identifiants de connexion
 
 Si vous souhaitez vous connecter en tant que `Admin`, entrez ces informations : email : `admin@admin.com`, mot de passe : `admin`.
 
@@ -76,7 +93,7 @@ Vous pouvez également réinitialiser votre base de donnée en important le fich
 
 ---------------------------------
 
-### Merci pour l'intérêt que vous avez porté pour ce projet ! A bientôt ! :wave:
+### <p align="center"> :wave: Merci pour l'intérêt que vous avez porté pour ce projet ! A bientôt ! :wave: </p> 
 
 <br/>
 
@@ -88,7 +105,7 @@ Vous pouvez également réinitialiser votre base de donnée en important le fich
 
 # <p align="center"> :tada: O'Shop :tada: </p>
 
-## <a id="english"></a> Welcome to this E-Shop portfolio project !
+## <a id="english"></a> :wave: Welcome to this E-Shop portfolio project !
 
 The point of this project was to practice implementing common e-shop features such as :
 
@@ -105,20 +122,37 @@ The point of this project was to practice implementing common e-shop features su
 
 This project was made using NodeJS, Express, PostgresSQL and Sequelize on the Back-end side, EJS (for templating), HTML5, CSS, and SCSS for the Front-end. 
 
-##  - If you are interested, you can set this project up locally on your device by following the detailed guide below.
+## :rocket: If you are interested, you can set this project up locally on your device by following the detailed guide below.
 
 1) After cloning this repository, make sure to install the required dependencies with `npm install`.
-2) Setup the database locally and fetch in the `data` folder the file named `create_db.sql` which contains all the required data for this project.
-3) Fill in your .env file based on the `env_example` file provided.
+
+2) Create the PostgreSQL database :
+
+&nbsp; &nbsp; &nbsp; &nbsp;  a) Login as the superuser `postgres` by typing : `sudo -u -i postgres psql`.
+
+&nbsp; &nbsp; &nbsp; &nbsp;  b) Create the owner of the soon to be created database : `CREATE ROLE "username" WITH LOGIN PASSWORD 'password';`
+
+&nbsp; &nbsp; &nbsp; &nbsp;  c) Create the database : `CREATE DATABASE "dbname" OWNER "username";`
+
+&nbsp; &nbsp; &nbsp; &nbsp;  d) Type `exit` to disconnect from the superuser `postgres`.
+
+&nbsp; &nbsp; &nbsp; &nbsp;  e) Import the database : `psql -U "username" -d "dbname" -f ./data/create_db.sql`, then type the password defined in step B.
+
+&nbsp; &nbsp; &nbsp; &nbsp;  f) Login to the project's database : `psql -U "username" -d "dbname"`, type your password once more.
+
+&nbsp; &nbsp; &nbsp; &nbsp;  g) Congratulations the database has been created ! :tada: 
+
+3) Fill in your `.env` file based on the `even_example` file provided. (Be careful to replace the "username", "password" and "dbname" by the ones defined in step **2)b) and 2)c)**.
+
 4) And voilà everything is ready ! You can now launch this project locally by typing `nodemon index.js` or `node-dev index.js` in the terminal.
 
 ----------------------------------
 
-# - Extras
+# :notebook: Extras
 
 This section will provide you with the database structure and the login credentials.
 
-### - Database
+### :computer: Database
 
 Here is Mocodo representation of the database we are using :
 
@@ -137,13 +171,13 @@ belong, 11 users, 1N roles
 roles: code_roles, name
 ```
 
-### - Login informations
+### :lock: Login informations
 
 For logins, there are 2 types of accounts based on their roles : `Admin` and `Client`.
 
 By default, all newly created accounts will be `Client` accounts.
 
-### - Login credentials
+### :information_source: Login credentials
 
 If you would like to use the `Admin` account, enter in the form : email : `admin@admin.com`, passsword : `admin`.
 
@@ -159,4 +193,4 @@ You can also reset your database by importing the `create_db.sql` file again.
 
 ---------------------------------
 
-### Thank you for showing interest to this project ! See you next time ! :wave:
+### <p align="center"> :wave: Thank you for showing interest to this project ! See you next time ! :wave: </p>
